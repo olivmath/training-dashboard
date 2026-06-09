@@ -1,0 +1,6 @@
+/* src/index.css */
+/* Reseting default Vite styles to use our App.css */
+body {
+  margin: 0;
+  padding: 0;
+}

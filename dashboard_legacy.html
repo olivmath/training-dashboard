@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lucas · Training Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg:       #111113;
+  --surface:  #18181b;
+  --border:   #27272a;
+  --text:     #fafafa;
+  --muted:    #71717a;
+  --subtle:   #3f3f46;
+  --accent:   #22c55e;
+  --accent2:  #f97316;
+  --blue:     #60a5fa;
+  --radius:   8px;
+  --bike:     #3b82f6;
+}
+[data-theme="light"] {
+  --bg:       #f9f9f9;
+  --surface:  #ffffff;
+  --border:   #e4e4e7;
+  --text:     #09090b;
+  --muted:    #71717a;
+  --subtle:   #d4d4d8;
+  --accent:   #16a34a;
+  --accent2:  #ea580c;
+  --blue:     #2563eb;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LAYOUT ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* ── NAV ── */
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-title {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+.nav-title span { color: var(--accent); }
+.nav-meta { font-size: 12px; color: var(--muted); }
+.nav-right { display: flex; gap: 8px; align-items: center; }
+.theme-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.theme-btn:hover { background: var(--border); }
+
+/* ── TABS ── */
+.tabs {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+.tabs-inner {
+  display: flex;
+  gap: 0;
+}
+.tab-btn {
+  padding: 14px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, border-color 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
+.tab-btn.active.bike-tab { border-bottom-color: var(--bike); }
+.tab-pane { display: none; }
+.tab-pane.active { display: block; }
+
+/* ── SECTIONS ── */
+section { padding: 36px 0; border-bottom: 1px solid var(--border); }
+section:last-child { border-bottom: none; }
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* ── KPI GRID ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.kpi {
+  background: var(--surface);
+  padding: 20px 18px;
+}
+.kpi-label { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+.kpi-value {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.kpi-value.green { color: var(--accent); }
+.kpi-value.orange { color: var(--accent2); }
+.kpi-value.blue { color: var(--blue); }
+.kpi-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* ── CHARTS ── */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.chart-card.full { grid-column: 1 / -1; }
+.chart-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.chart-wrap { position: relative; height: 200px; }
+.chart-wrap.tall { height: 260px; }
+
+/* ── BIO ── */
+.bio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.bio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.bio-label { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+.bio-value {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.bio-unit { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.bio-bar {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+.bio-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+.bio-hint { font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+/* ── INSIGHTS ── */
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.insight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.insight-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.insight-icon.g { background: rgba(34,197,94,.12); color: var(--accent); }
+.insight-icon.o { background: rgba(249,115,22,.12); color: var(--accent2); }
+.insight-icon.b { background: rgba(96,165,250,.12); color: var(--blue); }
+.insight-text { font-size: 13px; line-height: 1.55; color: var(--text); }
+.insight-text b { color: var(--accent); font-weight: 600; }
+.insight-text em { color: var(--accent2); font-style: normal; font-weight: 500; }
+
+/* ── TABLE ── */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  text-align: left;
+  padding: 10px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--surface); }
+.dot {
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+.pace-fast { color: var(--accent); font-weight: 500; }
+.pace-slow { color: var(--muted); }
+
+/* ── PLAN ── */
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 10px;
+}
+.week-col { display: flex; flex-direction: column; gap: 6px; }
+.week-head {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--border);
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.week-col.now .week-head { color: var(--accent); border-color: var(--accent); }
+.week-focus { font-size: 10px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
+.week-col.now .week-focus { color: var(--accent); }
+.sesh {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  border-left-width: 3px;
+}
+.sesh.easy   { border-left-color: var(--subtle); }
+.sesh.tempo  { border-left-color: var(--accent2); }
+.sesh.intv   { border-left-color: var(--accent); }
+.sesh.long   { border-left-color: var(--blue); }
+.sesh.rest   { border-left-color: var(--border); opacity: 0.55; }
+.sesh.race   { border-left-color: #eab308; }
+.sesh-day  { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px; }
+.sesh-name { font-size: 12px; font-weight: 600; margin-bottom: 2px; }
+.sesh-detail { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+/* ── ZONES ── */
+.zones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+.zones-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.zones-card h4 { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.06em; }
+.zone-row {
+  display: grid;
+  grid-template-columns: 120px 90px 1fr;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  font-size: 13px;
+}
+.zone-row:last-child { border-bottom: none; }
+.zone-pace { font-family: 'Inter Tight', sans-serif; font-weight: 600; }
+.zone-desc { font-size: 11px; color: var(--muted); }
+
+/* ── LEGEND ── */
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.legend-swatch { width: 12px; height: 3px; border-radius: 2px; }
+/* ── MOBILE FIRST ── */
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+
+  nav { padding: 12px 0; }
+  .nav-inner { flex-wrap: wrap; gap: 8px; }
+  .nav-meta { font-size: 11px; }
+
+  .tabs-inner { overflow-x: auto; white-space: nowrap; }
+  .tab-btn { padding: 12px 14px; font-size: 12px; }
+
+  section { padding: 24px 0; }
+
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .kpi { padding: 14px 12px; }
+  .kpi-value { font-size: 22px; }
+
+  .charts-grid { grid-template-columns: 1fr; }
+  .chart-wrap { height: 180px; }
+  .chart-wrap.tall { height: 200px; }
+
+  .bio-grid { grid-template-columns: repeat(2, 1fr); }
+  .bio-value { font-size: 24px; }
+
+  .insights-grid { grid-template-columns: 1fr; }
+
+  .plan-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding-bottom: 8px;
+  }
+  .week-col { min-width: 160px; flex-shrink: 0; }
+
+  .zones-grid { grid-template-columns: 1fr; }
+
+  #glossaryGrid { grid-template-columns: 1fr; }
+
+  th, td { padding: 7px 8px; font-size: 11px; }
+}
+
+@media (max-width: 480px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .kpi-value { font-size: 20px; }
+  .bio-grid { grid-template-columns: 1fr 1fr; }
+  h1, .nav-title { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <div>
+      <div class="nav-title">Lucas · <span>Running Dashboard</span></div>
+      <div class="nav-meta">79 corridas · 354 km · mai/2025 → jun/2026</div>
+    </div>
+    <div class="nav-right">
+      <button class="theme-btn" onclick="toggleTheme()">☀ / ☾ tema</button>
+    </div>
+  </div>
+</nav>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="container tabs-inner">
+    <button class="tab-btn active" onclick="switchTab('run', this)">🏃 Corrida <span style="font-size:11px;color:var(--muted)">78 · 332km</span></button>
+    <button class="tab-btn bike-tab" onclick="switchTab('bike', this)">🚴 Bike <span style="font-size:11px;color:var(--muted)">44 · 225km</span></button>
+    <button class="tab-btn" onclick="switchTab('glossary', this)">📖 Glossário</button>
+  </div>
+</div>
+
+<div id="tab-run" class="tab-pane active">
+<!-- KPIs -->
+<section>
+  <div class="container">
+    <div class="section-label">Resumo geral</div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Distância total</div>
+        <div class="kpi-value green">332 km</div>
+        <div class="kpi-sub">78 corridas</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Pace médio</div>
+        <div class="kpi-value">6:12</div>
+        <div class="kpi-sub">min/km</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Melhor pace (5km+)</div>
+        <div class="kpi-value orange">5:01</div>
+        <div class="kpi-sub">02/08/2025</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Maior corrida</div>
+        <div class="kpi-value blue">10,3 km</div>
+        <div class="kpi-sub">07/06/2025 · 6:21/km</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">FC média</div>
+        <div class="kpi-value">149 bpm</div>
+        <div class="kpi-sub">zona aeróbica</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Calorias estimadas</div>
+        <div class="kpi-value">17 k</div>
+        <div class="kpi-sub">kcal totais</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARTS -->
+<section>
+  <div class="container">
+    <div class="section-label">Desempenho ao longo do tempo</div>
+    <div class="charts-grid">
+      <div class="chart-card full">
+        <div class="chart-label">Pace por corrida · mínimo/km</div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-swatch" style="background:var(--accent);opacity:.5"></div>pace individual</div>
+          <div class="legend-item"><div class="legend-swatch" style="background:var(--accent2)"></div>média móvel 7 corridas</div>
+        </div>
+        <div class="chart-wrap tall"><canvas id="paceChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">Volume mensal · km</div>
+        <div class="chart-wrap"><canvas id="volumeChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">Distribuição de distâncias</div>
+        <div class="chart-wrap"><canvas id="distChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIOMECHANICS -->
+<section>
+  <div class="container">
+    <div class="section-label">Biomecânica · Apple Watch (média das corridas com sensores)</div>
+    <div class="bio-grid">
+      <div class="bio-card">
+        <div class="bio-label">Comprimento de passada</div>
+        <div class="bio-value" style="color:var(--accent)">1,01</div>
+        <div class="bio-unit">metros por passada</div>
+        <div class="bio-bar"><div class="bio-fill" style="width:72%;background:var(--accent)"></div></div>
+        <div class="bio-hint">Bom · objetivo ≥ 1,10 m</div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-label">Potência de corrida</div>
+        <div class="bio-value" style="color:var(--accent2)">202</div>
+        <div class="bio-unit">watts (média)</div>
+        <div class="bio-bar"><div class="bio-fill" style="width:65%;background:var(--accent2)"></div></div>
+        <div class="bio-hint">Moderado · elite &gt; 250 W</div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-label">Tempo de contato solo</div>
+        <div class="bio-value" style="color:var(--accent2)">250</div>
+        <div class="bio-unit">milissegundos</div>
+        <div class="bio-bar"><div class="bio-fill" style="width:55%;background:var(--accent2)"></div></div>
+        <div class="bio-hint">Alto · objetivo &lt; 230 ms</div>
+      </div>
+      <div class="bio-card">
+        <div class="bio-label">Oscilação vertical</div>
+        <div class="bio-value" style="color:var(--accent)">9,2</div>
+        <div class="bio-unit">centímetros</div>
+        <div class="bio-bar"><div class="bio-fill" style="width:78%;background:var(--accent)"></div></div>
+        <div class="bio-hint">Ótimo · ideal entre 6–10 cm</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section>
+  <div class="container">
+    <div class="section-label">Insights</div>
+    <div class="insights-grid">
+      <div class="insight-card">
+        <div class="insight-icon g">↑</div>
+        <div class="insight-text">Pico de <b>5:01/km</b> em agosto 2025. Em jul–ago fez <em>8 corridas em ~4 semanas</em> — maior consistência do período e melhor resultado.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon o">!</div>
+        <div class="insight-text">Dois gaps longos: <em>6 semanas</em> (set→out/2025) e <em>7 semanas</em> (nov/2025→jan/2026). Cada pausa custa semanas de adaptação cardiovascular.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon g">✓</div>
+        <div class="insight-text">Maior corrida real: <b>10,3 km</b> em jun/2025 a 6:21/km. Boa base para 10k — o próximo passo é empurrar para 12–15 km nas saídas longas.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon o">→</div>
+        <div class="insight-text">GCT de <em>~250 ms</em> é alto. Aumentar cadência para ≥ 170 spm e exercícios de skipping/plyometria reduzem diretamente.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon g">↑</div>
+        <div class="insight-text">Retorno em mai–jun/2026 com regularidade crescente. <b>10 km a 5:46/km</b> em 04/06 confirma boa base atual para começar o plano.</div>
+      </div>
+      <div class="insight-card">
+        <div class="insight-icon b">i</div>
+        <div class="insight-text">Nenhum treino intervalado nos dados — todas as corridas parecem contínuas. Sem estímulos de velocidade, o platô em ~6:00/km persiste.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE -->
+<section>
+  <div class="container">
+    <div class="section-label">Últimas 20 corridas</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Fonte</th>
+            <th>Distância</th>
+            <th>Duração</th>
+            <th>Pace</th>
+            <th>FC média</th>
+            <th>Calorias</th>
+            <th>Potência</th>
+            <th>Passada</th>
+            <th>GCT</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PLAN -->
+<section>
+  <div class="container">
+    <div class="section-label">Plano de treino · 8 semanas para quebrar 5:00/km</div>
+
+    <div class="legend" style="margin-bottom:20px">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--subtle)"></div>fácil</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--accent2)"></div>tempo</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--accent)"></div>intervalado</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--blue)"></div>longo</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#eab308"></div>prova</div>
+    </div>
+
+    <div class="plan-grid">
+
+      <div class="week-col now">
+        <div class="week-head">S1</div>
+        <div class="week-focus">Base aeróbica</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">30 min · 6:30/km</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">mobilidade</div></div>
+        <div class="sesh easy"><div class="sesh-day">Qua</div><div class="sesh-name">Fácil + Strides</div><div class="sesh-detail">25 min + 4×100 m aceleração</div></div>
+        <div class="sesh rest"><div class="sesh-day">Qui</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh long"><div class="sesh-day">Sáb</div><div class="sesh-name">Longo</div><div class="sesh-detail">6 km · 6:45/km</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S2</div>
+        <div class="week-focus">Ativação de ritmo</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">30 min · 6:20/km</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh tempo"><div class="sesh-day">Qua</div><div class="sesh-name">Tempo curto</div><div class="sesh-detail">2 km fácil + 2×1 km a 5:40 + 2 km fácil</div></div>
+        <div class="sesh rest"><div class="sesh-day">Qui</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh long"><div class="sesh-day">Sáb</div><div class="sesh-name">Longo</div><div class="sesh-detail">7 km · ritmo fácil</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S3</div>
+        <div class="week-focus">Intro intervalos</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">30 min</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh intv"><div class="sesh-day">Qua</div><div class="sesh-name">Tiros 400 m</div><div class="sesh-detail">WU + 4×400 m a 4:50 + 2 min rec + CD</div></div>
+        <div class="sesh rest"><div class="sesh-day">Qui</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh long"><div class="sesh-day">Sáb</div><div class="sesh-name">Longo</div><div class="sesh-detail">8 km · 6:30/km</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S4</div>
+        <div class="week-focus">Consolidação</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">30 min</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh tempo"><div class="sesh-day">Qua</div><div class="sesh-name">Tempo 3 km</div><div class="sesh-detail">WU + 3 km contínuo a 5:30 + CD</div></div>
+        <div class="sesh easy"><div class="sesh-day">Qui</div><div class="sesh-name">Descanso ativo</div><div class="sesh-detail">20 min fácil ou bike</div></div>
+        <div class="sesh long"><div class="sesh-day">Sáb</div><div class="sesh-name">Longo</div><div class="sesh-detail">9 km · 6:20/km</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S5</div>
+        <div class="week-focus">Carga + velocidade</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">35 min</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh intv"><div class="sesh-day">Qua</div><div class="sesh-name">Tiros 800 m</div><div class="sesh-detail">WU + 4×800 m a 5:10 + 90 s rec + CD</div></div>
+        <div class="sesh easy"><div class="sesh-day">Qui</div><div class="sesh-name">Regenerativo</div><div class="sesh-detail">20 min a 7:00/km</div></div>
+        <div class="sesh long"><div class="sesh-day">Sáb</div><div class="sesh-name">Longo</div><div class="sesh-detail">10 km · inclui 3 km a 5:50</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S6</div>
+        <div class="week-focus">Pico de intensidade</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">30 min</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh intv"><div class="sesh-day">Qua</div><div class="sesh-name">Pirâmide</div><div class="sesh-detail">400+800+1200+800+400 m · 4:50–5:10/km</div></div>
+        <div class="sesh easy"><div class="sesh-day">Qui</div><div class="sesh-name">Fácil</div><div class="sesh-detail">25 min</div></div>
+        <div class="sesh tempo"><div class="sesh-day">Sáb</div><div class="sesh-name">Tempo 4 km</div><div class="sesh-detail">WU + 4 km a 5:20 + CD</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S7</div>
+        <div class="week-focus">Afinamento</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">25 min · destravar pernas</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh intv"><div class="sesh-day">Qua</div><div class="sesh-name">Tiros curtos</div><div class="sesh-detail">6×400 m a 4:40 · 2 min rec</div></div>
+        <div class="sesh rest"><div class="sesh-day">Qui</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh easy"><div class="sesh-day">Sáb</div><div class="sesh-name">Fácil + Strides</div><div class="sesh-detail">20 min + 6×100 m sprint</div></div>
+      </div>
+
+      <div class="week-col">
+        <div class="week-head">S8</div>
+        <div class="week-focus">Teste de velocidade</div>
+        <div class="sesh easy"><div class="sesh-day">Seg</div><div class="sesh-name">Fácil</div><div class="sesh-detail">20 min · pernas descansadas</div></div>
+        <div class="sesh rest"><div class="sesh-day">Ter</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh easy"><div class="sesh-day">Qua</div><div class="sesh-name">Ativação</div><div class="sesh-detail">15 min + 4 strides</div></div>
+        <div class="sesh rest"><div class="sesh-day">Qui</div><div class="sesh-name">Descanso</div><div class="sesh-detail">—</div></div>
+        <div class="sesh race"><div class="sesh-day">Sáb</div><div class="sesh-name">TIME TRIAL 5 km</div><div class="sesh-detail">Meta: sub-4:55/km · saia a 5:10 nos primeiros 2 km</div></div>
+      </div>
+
+    </div>
+
+    <div class="zones-grid">
+      <div class="zones-card">
+        <h4>Zonas de pace de treino</h4>
+        <div class="zone-row">
+          <span>Recuperação / Fácil</span>
+          <span class="zone-pace" style="color:var(--muted)">6:30 – 7:00</span>
+          <span class="zone-desc">80% dos treinos</span>
+        </div>
+        <div class="zone-row">
+          <span>Tempo / Limiar</span>
+          <span class="zone-pace" style="color:var(--accent2)">5:15 – 5:35</span>
+          <span class="zone-desc">10–15 min contínuos</span>
+        </div>
+        <div class="zone-row">
+          <span>Intervalado / VO2</span>
+          <span class="zone-pace" style="color:var(--accent)">4:40 – 5:00</span>
+          <span class="zone-desc">400–1200 m repetições</span>
+        </div>
+        <div class="zone-row">
+          <span>Prova 5 km</span>
+          <span class="zone-pace" style="color:#eab308">4:55 – 5:05</span>
+          <span class="zone-desc">meta semana 8</span>
+        </div>
+      </div>
+      <div class="zones-card">
+        <h4>Dicas baseadas nos seus dados</h4>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div class="insight-card" style="padding:10px 12px">
+            <div class="insight-icon g" style="width:24px;height:24px;font-size:11px;border-radius:5px">1</div>
+            <div class="insight-text"><b>Cadência</b> — passada de 1,01 m sugere ~165 spm. Aumente para 170–175 spm com playlist nesse BPM.</div>
+          </div>
+          <div class="insight-card" style="padding:10px 12px">
+            <div class="insight-icon g" style="width:24px;height:24px;font-size:11px;border-radius:5px">2</div>
+            <div class="insight-text"><b>Consistência &gt; intensidade</b> — 3 vezes por semana sem gaps vale mais do que treinos duros esporádicos.</div>
+          </div>
+          <div class="insight-card" style="padding:10px 12px">
+            <div class="insight-icon g" style="width:24px;height:24px;font-size:11px;border-radius:5px">3</div>
+            <div class="insight-text"><b>GCT 250 ms</b> — pouse o pé embaixo do quadril, não à frente. Drills de skipping e A-skip corrigem isso.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div><!-- /tab-run -->
+
+<!-- BIKE TAB -->
+<div id="tab-bike" class="tab-pane">
+
+<section>
+  <div class="container">
+    <div class="section-label">Resumo · bike</div>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <div class="kpi-label">Distância total</div>
+        <div class="kpi-value" style="color:var(--bike)">225 km</div>
+        <div class="kpi-sub">44 pedaladas</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Velocidade média</div>
+        <div class="kpi-value">17,6</div>
+        <div class="kpi-sub">km/h</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Maior pedalada</div>
+        <div class="kpi-value" style="color:var(--accent2)">15,4 km</div>
+        <div class="kpi-sub">28/08/2025 · 12,2 km/h</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Tempo total</div>
+        <div class="kpi-value">13,6 h</div>
+        <div class="kpi-sub">816 minutos</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">FC média</div>
+        <div class="kpi-value">138 bpm</div>
+        <div class="kpi-sub">zona 2–3</div>
+      </div>
+      <div class="kpi">
+        <div class="kpi-label">Fontes</div>
+        <div class="kpi-value" style="font-size:18px;letter-spacing:0">Watch + Strava</div>
+        <div class="kpi-sub">dez/2024 → mai/2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Desempenho · bike</div>
+    <div class="charts-grid">
+      <div class="chart-card full">
+        <div class="chart-label">Velocidade por pedalada · km/h</div>
+        <div class="chart-wrap tall"><canvas id="bikeSpeedChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">Volume mensal · km</div>
+        <div class="chart-wrap"><canvas id="bikeVolumeChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-label">Distribuição de distâncias</div>
+        <div class="chart-wrap"><canvas id="bikeDistChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Todas as pedaladas · 44 atividades</div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Fonte</th>
+            <th>Nome</th>
+            <th>Distância</th>
+            <th>Duração</th>
+            <th>Velocidade</th>
+            <th>FC média</th>
+            <th>Calorias</th>
+            <th>Elevação</th>
+          </tr>
+        </thead>
+        <tbody id="bikeTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</div><!-- /tab-bike -->
+
+<!-- GLOSSARY TAB -->
+<div id="tab-glossary" class="tab-pane">
+<section>
+  <div class="container">
+    <div class="section-label">Glossário · todos os termos usados neste dashboard</div>
+    <div id="glossaryGrid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px"></div>
+  </div>
+</section>
+</div><!-- /tab-glossary -->
+
+<script>
+const RUNS = [{"date": "2025-05-04", "source": "Strava", "duration_min": 13.53, "dist_km": 2.257, "pace": 6.0, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-05-28", "source": "Strava", "duration_min": 13.93, "dist_km": 2.139, "pace": 6.51, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-05-29", "source": "Strava", "duration_min": 10.2, "dist_km": 1.35, "pace": 7.56, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-05-31", "source": "Strava", "duration_min": 44.08, "dist_km": 4.289, "pace": 10.28, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-05-31", "source": "Apple Watch de Lucas", "duration_min": 24.32, "dist_km": 2.288, "pace": 10.63, "hr_avg": 131.6, "calories": 164.9, "steps": 2682, "stride_m": 1.013, "power_w": 155.3, "vert_osc_cm": 8.93, "gct_ms": 253.5}, {"date": "2025-06-06", "source": "Nike Run Club", "duration_min": 32.01, "dist_km": 5.052, "pace": 6.34, "hr_avg": null, "calories": 341.2, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-06-06", "source": "Apple Watch de Lucas", "duration_min": 30.13, "dist_km": 4.668, "pace": 6.45, "hr_avg": 153.1, "calories": 316.0, "steps": 4648, "stride_m": 0.999, "power_w": 208.3, "vert_osc_cm": 9.06, "gct_ms": 259.4}, {"date": "2025-06-07", "source": "Nike Run Club", "duration_min": 65.68, "dist_km": 10.322, "pace": 6.36, "hr_avg": null, "calories": 773.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-06-07", "source": "Apple Watch de Lucas", "duration_min": 64.02, "dist_km": 9.78, "pace": 6.55, "hr_avg": 161.4, "calories": 740.5, "steps": 10446, "stride_m": 0.929, "power_w": 203.3, "vert_osc_cm": 8.68, "gct_ms": 244.7}, {"date": "2025-06-09", "source": "Apple Watch de Lucas", "duration_min": 7.27, "dist_km": 0.687, "pace": 10.58, "hr_avg": 103.8, "calories": 41.0, "steps": 781, "stride_m": null, "power_w": 124.5, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-06-09", "source": "Nike Run Club", "duration_min": 64.26, "dist_km": 10.015, "pace": 6.42, "hr_avg": null, "calories": 726.9, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-06-09", "source": "Apple Watch de Lucas", "duration_min": 29.87, "dist_km": 4.576, "pace": 6.53, "hr_avg": 158.3, "calories": 342.4, "steps": 4695, "stride_m": 0.956, "power_w": 205.8, "vert_osc_cm": 9.21, "gct_ms": 246.4}, {"date": "2025-06-14", "source": "Nike Run Club", "duration_min": 29.3, "dist_km": 5.171, "pace": 5.67, "hr_avg": null, "calories": 376.2, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-06-19", "source": "Nike Run Club", "duration_min": 31.46, "dist_km": 5.088, "pace": 6.18, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-06-19", "source": "Apple Watch de Lucas", "duration_min": 31.59, "dist_km": 5.027, "pace": 6.28, "hr_avg": 161.1, "calories": 344.0, "steps": 5099, "stride_m": 1.005, "power_w": 216.7, "vert_osc_cm": 8.86, "gct_ms": 248.7}, {"date": "2025-06-21", "source": "Nike Run Club", "duration_min": 28.35, "dist_km": 5.027, "pace": 5.64, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-01", "source": "Nike Run Club", "duration_min": 25.65, "dist_km": 3.332, "pace": 7.7, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-06", "source": "Nike Run Club", "duration_min": 31.13, "dist_km": 5.056, "pace": 6.16, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-06", "source": "Apple Watch de Lucas", "duration_min": 25.3, "dist_km": 3.751, "pace": 6.74, "hr_avg": 155.9, "calories": 253.0, "steps": 3634, "stride_m": 1.065, "power_w": 210.0, "vert_osc_cm": 9.72, "gct_ms": 252.7}, {"date": "2025-07-11", "source": "Nike Run Club", "duration_min": 60.51, "dist_km": 10.092, "pace": 6.0, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-18", "source": "Nike Run Club", "duration_min": 32.16, "dist_km": 5.006, "pace": 6.42, "hr_avg": null, "calories": 0.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-19", "source": "Nike Run Club", "duration_min": 28.22, "dist_km": 5.078, "pace": 5.56, "hr_avg": null, "calories": 371.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-19", "source": "Nike Run Club", "duration_min": 33.74, "dist_km": 6.024, "pace": 5.6, "hr_avg": null, "calories": 401.4, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-21", "source": "Nike Run Club", "duration_min": 30.07, "dist_km": 5.082, "pace": 5.92, "hr_avg": null, "calories": 351.1, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-23", "source": "Nike Run Club", "duration_min": 27.94, "dist_km": 5.175, "pace": 5.4, "hr_avg": null, "calories": 363.2, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-24", "source": "Nike Run Club", "duration_min": 25.83, "dist_km": 5.024, "pace": 5.14, "hr_avg": null, "calories": 353.1, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-26", "source": "Nike Run Club", "duration_min": 26.74, "dist_km": 5.032, "pace": 5.31, "hr_avg": null, "calories": 337.9, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-07-29", "source": "Nike Run Club", "duration_min": 26.42, "dist_km": 5.024, "pace": 5.26, "hr_avg": null, "calories": 345.4, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-01", "source": "Nike Run Club", "duration_min": 27.19, "dist_km": 4.512, "pace": 6.03, "hr_avg": null, "calories": 308.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-02", "source": "Nike Run Club", "duration_min": 25.17, "dist_km": 5.029, "pace": 5.01, "hr_avg": null, "calories": 345.9, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-03", "source": "Nike Run Club", "duration_min": 28.52, "dist_km": 5.045, "pace": 5.65, "hr_avg": null, "calories": 346.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-04", "source": "Nike Run Club", "duration_min": 27.96, "dist_km": 5.035, "pace": 5.55, "hr_avg": null, "calories": 350.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-13", "source": "Nike Run Club", "duration_min": 9.61, "dist_km": 1.78, "pace": 5.4, "hr_avg": null, "calories": 123.4, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-13", "source": "Nike Run Club", "duration_min": 24.55, "dist_km": 4.369, "pace": 5.62, "hr_avg": null, "calories": 284.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-17", "source": "Nike Run Club", "duration_min": 41.13, "dist_km": 7.347, "pace": 5.6, "hr_avg": null, "calories": 522.2, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-08-18", "source": "Nike Run Club", "duration_min": 7.24, "dist_km": 1.325, "pace": 5.46, "hr_avg": null, "calories": 87.3, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-09-03", "source": "Apple Watch de Lucas", "duration_min": 17.12, "dist_km": 2.923, "pace": 5.86, "hr_avg": 164.1, "calories": 208.2, "steps": 2742, "stride_m": 1.083, "power_w": 236.8, "vert_osc_cm": 9.03, "gct_ms": 254.4}, {"date": "2025-09-28", "source": "Nike Run Club", "duration_min": 28.5, "dist_km": 5.04, "pace": 5.65, "hr_avg": null, "calories": 341.1, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-10-04", "source": "Nike Run Club", "duration_min": 11.98, "dist_km": 2.247, "pace": 5.33, "hr_avg": null, "calories": 156.8, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-10-07", "source": "Nike Run Club", "duration_min": 21.07, "dist_km": 3.912, "pace": 5.39, "hr_avg": null, "calories": 262.3, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-10-18", "source": "Nike Run Club", "duration_min": 29.03, "dist_km": 5.023, "pace": 5.78, "hr_avg": null, "calories": 345.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-10-21", "source": "Nike Run Club", "duration_min": 23.09, "dist_km": 4.051, "pace": 5.7, "hr_avg": null, "calories": 284.8, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-10-22", "source": "Nike Run Club", "duration_min": 27.2, "dist_km": 5.048, "pace": 5.39, "hr_avg": null, "calories": 352.8, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-10-25", "source": "Nike Run Club", "duration_min": 28.17, "dist_km": 5.018, "pace": 5.61, "hr_avg": null, "calories": 334.3, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-11-17", "source": "Nike Run Club", "duration_min": 9.44, "dist_km": 1.678, "pace": 5.63, "hr_avg": null, "calories": 109.2, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2025-12-28", "source": "Nike Run Club", "duration_min": 9.75, "dist_km": 1.286, "pace": 7.59, "hr_avg": null, "calories": 90.4, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-01-14", "source": "Nike Run Club", "duration_min": 7.06, "dist_km": 1.049, "pace": 6.73, "hr_avg": null, "calories": 77.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-01-15", "source": "Nike Run Club", "duration_min": 12.74, "dist_km": 2.158, "pace": 5.9, "hr_avg": null, "calories": 147.9, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-01-26", "source": "Nike Run Club", "duration_min": 12.51, "dist_km": 2.026, "pace": 6.17, "hr_avg": null, "calories": 138.5, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-02", "source": "Nike Run Club", "duration_min": 21.05, "dist_km": 3.408, "pace": 6.17, "hr_avg": null, "calories": 232.8, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-03", "source": "Nike Run Club", "duration_min": 26.42, "dist_km": 4.087, "pace": 6.46, "hr_avg": null, "calories": 274.1, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-04", "source": "Nike Run Club", "duration_min": 25.77, "dist_km": 4.025, "pace": 6.4, "hr_avg": null, "calories": 283.2, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-11", "source": "Nike Run Club", "duration_min": 29.54, "dist_km": 5.008, "pace": 5.9, "hr_avg": null, "calories": 340.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-20", "source": "Nike Run Club", "duration_min": 36.62, "dist_km": 6.032, "pace": 6.07, "hr_avg": null, "calories": 409.1, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-24", "source": "Nike Run Club", "duration_min": 39.17, "dist_km": 6.238, "pace": 6.28, "hr_avg": null, "calories": 440.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-02-27", "source": "Nike Run Club", "duration_min": 24.42, "dist_km": 4.017, "pace": 6.08, "hr_avg": null, "calories": 276.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-03-02", "source": "Nike Run Club", "duration_min": 10.44, "dist_km": 1.694, "pace": 6.16, "hr_avg": null, "calories": 131.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-03-06", "source": "Nike Run Club", "duration_min": 15.63, "dist_km": 2.53, "pace": 6.18, "hr_avg": null, "calories": 193.3, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-03-28", "source": "Apple Watch de Lucas", "duration_min": 22.8, "dist_km": 3.671, "pace": 6.21, "hr_avg": 151.2, "calories": 239.0, "steps": 3680, "stride_m": 0.991, "power_w": 210.8, "vert_osc_cm": 9.5, "gct_ms": 258.4}, {"date": "2026-04-21", "source": "Nike Run Club", "duration_min": 41.99, "dist_km": 5.364, "pace": 7.83, "hr_avg": null, "calories": 348.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-04-24", "source": "Nike Run Club", "duration_min": 40.05, "dist_km": 5.027, "pace": 7.97, "hr_avg": null, "calories": 309.4, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-04-25", "source": "Nike Run Club", "duration_min": 74.79, "dist_km": 8.415, "pace": 8.89, "hr_avg": null, "calories": 532.7, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-04-27", "source": "Nike Run Club", "duration_min": 25.75, "dist_km": 4.23, "pace": 6.09, "hr_avg": null, "calories": 293.3, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-04-29", "source": "Nike Run Club", "duration_min": 40.34, "dist_km": 6.118, "pace": 6.59, "hr_avg": null, "calories": 395.4, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-05", "source": "Nike Run Club", "duration_min": 23.19, "dist_km": 3.357, "pace": 6.91, "hr_avg": null, "calories": 250.0, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-15", "source": "Apple Watch de Lucas", "duration_min": 16.64, "dist_km": 1.438, "pace": 11.57, "hr_avg": 131.4, "calories": 120.9, "steps": 1632, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-18", "source": "Apple Watch de Lucas", "duration_min": 8.48, "dist_km": 0.922, "pace": 9.2, "hr_avg": 136.0, "calories": 71.4, "steps": 1011, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-19", "source": "Apple Watch de Lucas", "duration_min": 8.32, "dist_km": 1.122, "pace": 7.41, "hr_avg": 145.5, "calories": 78.6, "steps": 1229, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-21", "source": "Apple Watch de Lucas", "duration_min": 11.76, "dist_km": 1.835, "pace": 6.41, "hr_avg": 150.0, "calories": 128.0, "steps": 1844, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-22", "source": "Apple Watch de Lucas", "duration_min": 6.51, "dist_km": 1.133, "pace": 5.74, "hr_avg": 141.4, "calories": 74.1, "steps": 1096, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-22", "source": "Apple Watch de Lucas", "duration_min": 8.87, "dist_km": 1.02, "pace": 8.69, "hr_avg": 136.5, "calories": 77.2, "steps": 1092, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-24", "source": "Nike Run Club", "duration_min": 60.44, "dist_km": 10.026, "pace": 6.03, "hr_avg": null, "calories": 674.6, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-28", "source": "Apple Watch de Lucas", "duration_min": 14.11, "dist_km": 2.09, "pace": 6.75, "hr_avg": 147.9, "calories": 160.7, "steps": 2180, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-05-28", "source": "Apple Watch de Lucas", "duration_min": 6.66, "dist_km": 0.778, "pace": 8.56, "hr_avg": 144.1, "calories": 65.8, "steps": 878, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-06-04", "source": "Nike Run Club", "duration_min": 57.8, "dist_km": 10.025, "pace": 5.77, "hr_avg": null, "calories": 681.5, "steps": 0, "stride_m": null, "power_w": null, "vert_osc_cm": null, "gct_ms": null}, {"date": "2026-06-08", "source": "Apple Watch de Lucas", "duration_min": 7.31, "dist_km": 1.04, "pace": 7.04, "hr_avg": 149.9, "calories": 77.2, "steps": 1151, "stride_m": 0.91, "power_w": 189.7, "vert_osc_cm": 9.53, "gct_ms": 241.0}];
+
+function fmtPace(v) {
+  if (!v) return '—';
+  const m = Math.floor(v), s = Math.round((v-m)*60);
+  return `${m}:${s.toString().padStart(2,'0')}`;
+}
+
+function movingAvg(data, n) {
+  return data.map((_, i) => {
+    if (i < n-1) return null;
+    const s = data.slice(i-n+1, i+1).filter(v => v !== null);
+    return s.length ? s.reduce((a,b)=>a+b,0)/s.length : null;
+  });
+}
+
+function getVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+
+function makeChartOptions(extra = {}) {
+  return {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: getVar('--surface'),
+        borderColor: getVar('--border'),
+        borderWidth: 1,
+        titleColor: getVar('--text'),
+        bodyColor: getVar('--muted'),
+        titleFont: { family: 'Inter', size: 12 },
+        bodyFont: { family: 'Inter', size: 11 },
+        padding: 10,
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: getVar('--border') },
+        ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, maxTicksLimit: 10 }
+      },
+      y: {
+        grid: { color: getVar('--border') },
+        ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } }
+      }
+    },
+    ...extra
+  };
+}
+
+// ── Pace chart ──
+const paceRuns = RUNS.filter(r => r.pace && r.pace < 12 && r.dist_km >= 1);
+const paceAvg = movingAvg(paceRuns.map(r => r.pace), 7);
+
+const paceChart = new Chart(document.getElementById('paceChart'), {
+  type: 'line',
+  data: {
+    labels: paceRuns.map(r => r.date.slice(5)),
+    datasets: [
+      {
+        data: paceRuns.map(r => r.pace),
+        borderColor: 'rgba(34,197,94,0.45)',
+        backgroundColor: 'rgba(34,197,94,0.05)',
+        borderWidth: 1.5,
+        pointRadius: 3,
+        pointBackgroundColor: paceRuns.map(r =>
+          r.pace < 5.2 ? '#eab308' : r.pace < 5.7 ? '#22c55e' : 'rgba(34,197,94,0.5)'
+        ),
+        fill: true,
+        tension: 0.3,
+      },
+      {
+        data: paceAvg,
+        borderColor: '#f97316',
+        borderWidth: 2,
+        borderDash: [5, 3],
+        pointRadius: 0,
+        tension: 0.4,
+      }
+    ]
+  },
+  options: makeChartOptions({
+    scales: {
+      x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, maxTicksLimit: 12 } },
+      y: {
+        reverse: true,
+        min: 4.5, max: 12,
+        grid: { color: getVar('--border') },
+        ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: v => fmtPace(v) }
+      }
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: getVar('--surface'),
+        borderColor: getVar('--border'),
+        borderWidth: 1,
+        titleColor: getVar('--text'),
+        bodyColor: getVar('--muted'),
+        titleFont: { family: 'Inter', size: 12 },
+        bodyFont: { family: 'Inter', size: 11 },
+        padding: 10,
+        callbacks: {
+          title: ctx => paceRuns[ctx[0].dataIndex]?.date + ' · ' + paceRuns[ctx[0].dataIndex]?.dist_km.toFixed(1) + ' km',
+          label: ctx => 'Pace: ' + fmtPace(ctx.raw) + '/km'
+        }
+      }
+    }
+  })
+});
+
+// ── Volume chart ──
+const monthMap = {};
+RUNS.forEach(r => { const k = r.date.slice(0,7); monthMap[k] = (monthMap[k]||0) + r.dist_km; });
+const months = Object.keys(monthMap).sort();
+const mNames = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+new Chart(document.getElementById('volumeChart'), {
+  type: 'bar',
+  data: {
+    labels: months.map(m => { const [y,mo] = m.split('-'); return mNames[+mo-1]+"'"+y.slice(2); }),
+    datasets: [{
+      data: months.map(m => +monthMap[m].toFixed(1)),
+      backgroundColor: months.map(m => monthMap[m] > 40 ? 'rgba(34,197,94,0.6)' : 'rgba(34,197,94,0.25)'),
+      borderColor: 'rgba(34,197,94,0.5)',
+      borderWidth: 1,
+      borderRadius: 3,
+    }]
+  },
+  options: makeChartOptions({
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: getVar('--surface'), borderColor: getVar('--border'), borderWidth: 1,
+        titleColor: getVar('--text'), bodyColor: getVar('--muted'),
+        padding: 10,
+        callbacks: { label: ctx => ctx.raw.toFixed(1) + ' km' }
+      }
+    },
+    scales: {
+      x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } } },
+      y: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: v => v+'km' } }
+    }
+  })
+});
+
+// ── Dist distribution ──
+const b = { '<2km':0, '2–4km':0, '4–6km':0, '6–8km':0, '8–12km':0, '>12km':0 };
+RUNS.forEach(r => {
+  const d = r.dist_km;
+  if (d<2) b['<2km']++;
+  else if (d<4) b['2–4km']++;
+  else if (d<6) b['4–6km']++;
+  else if (d<8) b['6–8km']++;
+  else if (d<12) b['8–12km']++;
+  else b['>12km']++;
+});
+
+new Chart(document.getElementById('distChart'), {
+  type: 'bar',
+  data: {
+    labels: Object.keys(b),
+    datasets: [{
+      data: Object.values(b),
+      backgroundColor: ['rgba(113,113,122,0.4)','rgba(113,113,122,0.5)','rgba(34,197,94,0.5)','rgba(34,197,94,0.35)','rgba(96,165,250,0.4)','rgba(234,179,8,0.4)'],
+      borderColor:     ['#71717a','#71717a','#22c55e','rgba(34,197,94,0.6)','#60a5fa','#eab308'],
+      borderWidth: 1,
+      borderRadius: 3,
+    }]
+  },
+  options: makeChartOptions({
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: getVar('--surface'), borderColor: getVar('--border'), borderWidth: 1,
+        titleColor: getVar('--text'), bodyColor: getVar('--muted'),
+        padding: 10,
+        callbacks: { label: ctx => ctx.raw + ' corridas' }
+      }
+    },
+    scales: {
+      x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } } },
+      y: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: v => v+'x' } }
+    }
+  })
+});
+
+// ── Table ──
+const srcColors = { 'Apple Watch de Lucas': '#ef4444', 'Nike Run Club': '#f97316', 'Strava': '#fb923c' };
+const tbody = document.getElementById('tableBody');
+[...RUNS].reverse().slice(0, 20).forEach(r => {
+  const color = srcColors[r.source] || '#71717a';
+  const srcName = r.source.includes('Apple') ? 'Apple Watch' : r.source;
+  const paceClass = r.pace ? (r.pace < 5.5 ? 'pace-fast' : r.pace > 8 ? 'pace-slow' : '') : '';
+  const dur = Math.floor(r.duration_min) + 'min ' + Math.round((r.duration_min%1)*60) + 's';
+  tbody.innerHTML += `<tr>
+    <td>${r.date}</td>
+    <td><span class="dot" style="background:${color}"></span>${srcName}</td>
+    <td>${r.dist_km.toFixed(2)} km</td>
+    <td>${dur}</td>
+    <td class="${paceClass}">${r.pace ? fmtPace(r.pace)+'/km' : '—'}</td>
+    <td>${r.hr_avg ? r.hr_avg+' bpm' : '—'}</td>
+    <td>${r.calories > 0 ? r.calories+' kcal' : '—'}</td>
+    <td>${r.power_w ? r.power_w+'W' : '—'}</td>
+    <td>${r.stride_m ? r.stride_m+'m' : '—'}</td>
+    <td>${r.gct_ms ? r.gct_ms+'ms' : '—'}</td>
+  </tr>`;
+});
+
+// ── Theme toggle ──
+function toggleTheme() {
+  const html = document.documentElement;
+  html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+}
+
+// ── Tab switch ──
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+  if (tab === 'bike' && !window._bikeChartsBuilt) {
+    buildBikeCharts();
+    window._bikeChartsBuilt = true;
+  }
+}
+
+// ── Bike data ──
+const BIKES = [{"source": "strava", "app": "Strava", "date": "2024-12-06", "name": "Pedalada vespertina", "dist_km": 6.45, "duration_min": 27.6, "speed_kmh": 14.4, "hr_avg": null, "power_w": null, "cadence": null, "calories": 0, "elev_m": 59.7}, {"source": "strava", "app": "Strava", "date": "2024-12-06", "name": "Pedalada vespertina", "dist_km": 0.31, "duration_min": 2.3, "speed_kmh": 12.6, "hr_avg": null, "power_w": null, "cadence": null, "calories": 0, "elev_m": null}, {"source": "strava", "app": "Strava", "date": "2025-05-06", "name": "Afternoon Ride", "dist_km": 6.77, "duration_min": 20.2, "speed_kmh": 20.9, "hr_avg": 146.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 26.7}, {"source": "strava", "app": "Strava", "date": "2025-05-06", "name": "Night Ride", "dist_km": 5.98, "duration_min": 30.0, "speed_kmh": 18.9, "hr_avg": 138.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 37.4}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-05-06", "name": "", "dist_km": 1.87, "duration_min": 6.1, "speed_kmh": 18.4, "hr_avg": 145.1, "power_w": null, "cadence": null, "calories": 59.0}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-05-06", "name": "", "dist_km": 5.85, "duration_min": 17.3, "speed_kmh": 20.3, "hr_avg": 147.6, "power_w": null, "cadence": null, "calories": 152.5}, {"source": "strava", "app": "Strava", "date": "2025-05-07", "name": "Afternoon Ride", "dist_km": 6.35, "duration_min": 19.7, "speed_kmh": 19.5, "hr_avg": 127.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 26.4}, {"source": "strava", "app": "Strava", "date": "2025-05-08", "name": "Afternoon Ride", "dist_km": 6.41, "duration_min": 21.6, "speed_kmh": 19.3, "hr_avg": 142.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 26.8}, {"source": "strava", "app": "Strava", "date": "2025-05-08", "name": "Night Ride", "dist_km": 5.95, "duration_min": 19.9, "speed_kmh": 20.8, "hr_avg": 148.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 35.3}, {"source": "strava", "app": "Strava", "date": "2025-05-09", "name": "Afternoon Ride", "dist_km": 6.51, "duration_min": 21.9, "speed_kmh": 19.1, "hr_avg": 144.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 26.0}, {"source": "strava", "app": "Strava", "date": "2025-05-09", "name": "Night Ride", "dist_km": 5.84, "duration_min": 16.3, "speed_kmh": 21.5, "hr_avg": 146.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 37.2}, {"source": "strava", "app": "Strava", "date": "2025-05-12", "name": "Evening Ride", "dist_km": 1.46, "duration_min": 7.2, "speed_kmh": 18.8, "hr_avg": 136.0, "power_w": null, "cadence": null, "calories": 0, "elev_m": 21.8}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-05-12", "name": "", "dist_km": 1.27, "duration_min": 4.0, "speed_kmh": 19.1, "hr_avg": 137.0, "power_w": null, "cadence": null, "calories": 37.1}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-08-28", "name": "", "dist_km": 15.42, "duration_min": 75.6, "speed_kmh": 12.2, "hr_avg": 130.8, "power_w": null, "cadence": null, "calories": 382.5}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-03", "name": "", "dist_km": 7.32, "duration_min": 21.7, "speed_kmh": 20.2, "hr_avg": 155.3, "power_w": null, "cadence": null, "calories": 191.2}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-07", "name": "", "dist_km": 6.86, "duration_min": 23.5, "speed_kmh": 17.5, "hr_avg": 142.4, "power_w": null, "cadence": null, "calories": 153.4}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-07", "name": "", "dist_km": 1.43, "duration_min": 6.4, "speed_kmh": 13.4, "hr_avg": 124.5, "power_w": null, "cadence": null, "calories": 29.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-10", "name": "", "dist_km": 6.2, "duration_min": 26.6, "speed_kmh": 14.0, "hr_avg": 123.5, "power_w": null, "cadence": null, "calories": 152.4}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-10", "name": "", "dist_km": 6.46, "duration_min": 22.8, "speed_kmh": 17.0, "hr_avg": 122.8, "power_w": null, "cadence": null, "calories": 136.0}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-11", "name": "", "dist_km": 1.21, "duration_min": 3.8, "speed_kmh": 19.1, "hr_avg": 124.7, "power_w": null, "cadence": null, "calories": 24.8}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-11", "name": "", "dist_km": 5.01, "duration_min": 16.9, "speed_kmh": 17.8, "hr_avg": 142.3, "power_w": null, "cadence": null, "calories": 121.6}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-11", "name": "", "dist_km": 3.82, "duration_min": 15.3, "speed_kmh": 15.0, "hr_avg": 122.2, "power_w": null, "cadence": null, "calories": 77.5}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-23", "name": "", "dist_km": 6.3, "duration_min": 23.5, "speed_kmh": 16.1, "hr_avg": 129.9, "power_w": null, "cadence": null, "calories": 163.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-23", "name": "", "dist_km": 4.93, "duration_min": 23.8, "speed_kmh": 12.4, "hr_avg": 124.6, "power_w": null, "cadence": null, "calories": 117.3}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-24", "name": "", "dist_km": 5.77, "duration_min": 18.1, "speed_kmh": 19.1, "hr_avg": 139.2, "power_w": null, "cadence": null, "calories": 134.1}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-09-28", "name": "", "dist_km": 5.64, "duration_min": 16.3, "speed_kmh": 20.8, "hr_avg": 161.0, "power_w": null, "cadence": null, "calories": 151.4}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-10-20", "name": "", "dist_km": 5.93, "duration_min": 22.7, "speed_kmh": 15.7, "hr_avg": 112.0, "power_w": null, "cadence": null, "calories": 121.9}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-13", "name": "", "dist_km": 4.06, "duration_min": 12.5, "speed_kmh": 19.5, "hr_avg": 156.7, "power_w": null, "cadence": null, "calories": 99.8}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-15", "name": "", "dist_km": 3.27, "duration_min": 13.2, "speed_kmh": 14.9, "hr_avg": 126.7, "power_w": null, "cadence": null, "calories": 49.9}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-21", "name": "", "dist_km": 10.1, "duration_min": 37.3, "speed_kmh": 16.2, "hr_avg": 142.0, "power_w": null, "cadence": null, "calories": 180.3}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-23", "name": "", "dist_km": 15.28, "duration_min": 59.5, "speed_kmh": 15.4, "hr_avg": 147.0, "power_w": null, "cadence": null, "calories": 321.2}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-27", "name": "", "dist_km": 6.15, "duration_min": 18.1, "speed_kmh": 20.4, "hr_avg": 137.7, "power_w": null, "cadence": null, "calories": 141.1}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-28", "name": "", "dist_km": 5.24, "duration_min": 16.3, "speed_kmh": 19.3, "hr_avg": 110.9, "power_w": null, "cadence": null, "calories": 97.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2025-12-31", "name": "", "dist_km": 4.27, "duration_min": 12.4, "speed_kmh": 20.7, "hr_avg": 160.3, "power_w": null, "cadence": null, "calories": 99.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-01-06", "name": "", "dist_km": 5.6, "duration_min": 13.7, "speed_kmh": 24.5, "hr_avg": 151.6, "power_w": null, "cadence": null, "calories": 152.6}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-01-26", "name": "", "dist_km": 3.79, "duration_min": 17.3, "speed_kmh": 13.1, "hr_avg": 123.0, "power_w": null, "cadence": null, "calories": 84.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-01-26", "name": "", "dist_km": 2.49, "duration_min": 11.2, "speed_kmh": 13.3, "hr_avg": 134.7, "power_w": null, "cadence": null, "calories": 52.6}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-01-29", "name": "", "dist_km": 2.38, "duration_min": 6.4, "speed_kmh": 22.3, "hr_avg": 155.8, "power_w": null, "cadence": null, "calories": 53.1}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-01-29", "name": "", "dist_km": 2.42, "duration_min": 7.1, "speed_kmh": 20.5, "hr_avg": 159.7, "power_w": null, "cadence": null, "calories": 46.9}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-02-03", "name": "", "dist_km": 5.19, "duration_min": 15.0, "speed_kmh": 20.8, "hr_avg": 145.8, "power_w": null, "cadence": null, "calories": 113.1}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-02-03", "name": "", "dist_km": 2.03, "duration_min": 7.7, "speed_kmh": 15.8, "hr_avg": 133.3, "power_w": null, "cadence": null, "calories": 34.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-03-29", "name": "", "dist_km": 2.54, "duration_min": 12.5, "speed_kmh": 12.2, "hr_avg": 137.9, "power_w": null, "cadence": null, "calories": 47.7}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-03-29", "name": "", "dist_km": 1.0, "duration_min": 3.9, "speed_kmh": 15.4, "hr_avg": 131.5, "power_w": null, "cadence": null, "calories": 13.9}, {"source": "apple_health", "app": "Apple Watch de Lucas", "date": "2026-05-07", "name": "", "dist_km": 6.01, "duration_min": 22.1, "speed_kmh": 16.3, "hr_avg": 135.9, "power_w": null, "cadence": null, "calories": 155.3}];
+
+// ── Glossary ──
+const GLOSSARY = [
+  { term: "Pace", unit: "min/km", emoji: "⏱️",
+    def: "Tempo que você leva para correr 1 quilômetro. Quanto menor, mais rápido. Ex: 6:00/km = 6 minutos por km.",
+    example: "Seu pace médio é 6:12/km. Seu melhor foi 5:01/km." },
+  { term: "FC (Frequência Cardíaca)", unit: "bpm", emoji: "❤️",
+    def: "Batimentos do coração por minuto. Indica o esforço do seu corpo. Quanto mais alta, mais intenso o esforço.",
+    example: "Suas corridas ficam em ~149 bpm em média — zona aeróbica." },
+  { term: "Zonas de FC", unit: "% da FC máx.", emoji: "🎯",
+    def: "Faixas de esforço: Z1 fácil (50–60%), Z2 aeróbico (60–70%), Z3 limiar (70–80%), Z4 intenso (80–90%), Z5 máximo (90–100%). Sua FC máx estimada: 192 bpm (220 − idade).",
+    example: "149 bpm = ~78% da sua FC máx = zona 3." },
+  { term: "Distância Total", unit: "km", emoji: "📏",
+    def: "Soma de todos os quilômetros percorridos no período. Inclui corrida e bike separados.",
+    example: "332 km de corrida + 225 km de bike = 557 km totais." },
+  { term: "Comprimento de Passada", unit: "metros", emoji: "👟",
+    def: "Distância coberta em cada passo duplo (pé direito + esquerdo). Passadas mais longas = mais eficiência.",
+    example: "Seu valor é 1,01m. Corredores rápidos chegam a 1,20–1,40m no ritmo de prova." },
+  { term: "Cadência", unit: "spm (passos/min)", emoji: "🦵",
+    def: "Quantos passos você dá por minuto. Cadência alta (≥170) é sinal de corrida eficiente e reduz lesões.",
+    example: "Seu step count sugere ~165 spm. Objetivo: 170–175 spm." },
+  { term: "GCT (Ground Contact Time)", unit: "ms", emoji: "⚡",
+    def: "Tempo que seu pé fica em contato com o chão a cada passada. Menos tempo = mais explosão e velocidade.",
+    example: "Seu valor é ~250ms. Corredores rápidos ficam em 180–220ms." },
+  { term: "Oscilação Vertical", unit: "cm", emoji: "↕️",
+    def: "Quanto seu corpo 'pula' para cima a cada passada. Ideal é mínimo — energia gasta subindo não te faz avançar.",
+    example: "Seu valor é 9,2cm — dentro da faixa ótima de 6–10cm." },
+  { term: "Potência de Corrida", unit: "Watts (W)", emoji: "🔋",
+    def: "Medida de força gerada ao correr. Combina velocidade, inclinação e peso. Permite comparar esforço independente do terreno.",
+    example: "Sua média é 202W. Corredores de elite chegam a 300–400W." },
+  { term: "Tempo Longo (Long Run)", unit: "sessão semanal", emoji: "🛣️",
+    def: "Corrida mais longa da semana, feita em pace confortável. Desenvolve base aeróbica e resistência.",
+    example: "No plano: sábados com 6–10km a 6:30/km." },
+  { term: "Tempo Run (Limiar)", unit: "sessão semanal", emoji: "🔥",
+    def: "Corrida sustentada em ritmo desconfortável mas controlável por 15–30 min. Aumenta seu limiar anaeróbico.",
+    example: "No plano: 3km contínuos a 5:30/km no meio da semana." },
+  { term: "Intervalado / Tiros", unit: "repetições", emoji: "🏁",
+    def: "Esforços curtos e intensos separados por recuperação. Ex: 4×400m = correr 400m rápido, recuperar, repetir 4x.",
+    example: "No plano: 4×400m a 4:50/km com 2 min de descanso entre." },
+  { term: "WU / CD", unit: "aquecimento / desaquecimento", emoji: "🌡️",
+    def: "WU (Warm-Up) = corrida fácil antes do treino intenso. CD (Cool-Down) = corrida fácil após o treino. Ambos previnem lesões.",
+    example: "No plano: WU de 1km fácil + treino + CD de 1km fácil." },
+  { term: "Strides", unit: "acelerações curtas", emoji: "💨",
+    def: "Acelerações de ~100m até ~90% do esforço máximo, com recuperação total entre elas. Melhoram técnica e velocidade sem cansar.",
+    example: "No plano: 4–6 strides de 100m ao final de corridas fáceis." },
+  { term: "Pirâmide", unit: "sessão intervalada", emoji: "🔺",
+    def: "Série que vai aumentando e depois diminuindo as distâncias. Ex: 400+800+1200+800+400m.",
+    example: "No plano S6: pirâmide com recuperação de 90s entre os esforços." },
+  { term: "VO₂ Máx", unit: "ml/kg/min", emoji: "🫁",
+    def: "Consumo máximo de oxigênio. Indica o teto da sua capacidade aeróbica. Treinos intervalados aumentam esse valor.",
+    example: "Não medido diretamente no seu Apple Watch — seria necessário teste de esforço." },
+  { term: "Elevação / Ganho de Elevação", unit: "metros", emoji: "⛰️",
+    def: "Total de metros subidos durante a atividade. Relevante para bike — mais elevação = mais esforço para mesma distância.",
+    example: "Suas pedaladas no Strava têm ~26–60m de elevação — terreno relativamente plano." },
+  { term: "Média Móvel", unit: "gráfico", emoji: "📈",
+    def: "Linha no gráfico que suaviza variações calculando a média das últimas N corridas. Mostra a tendência real, ignorando outliers.",
+    example: "A linha laranja no gráfico de pace = média das últimas 7 corridas." },
+];
+
+(function buildGlossary() {
+  const grid = document.getElementById('glossaryGrid');
+  if (!grid) return;
+  GLOSSARY.forEach(g => {
+    grid.innerHTML += `
+      <div class="insight-card" style="flex-direction:column;gap:10px;align-items:stretch">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:20px">${g.emoji}</span>
+          <div>
+            <div style="font-weight:600;font-size:14px">${g.term}</div>
+            <div style="font-size:11px;color:var(--muted)">${g.unit}</div>
+          </div>
+        </div>
+        <div style="font-size:13px;line-height:1.6;color:var(--text)">${g.def}</div>
+        <div style="font-size:11px;color:var(--muted);background:var(--bg);padding:8px 10px;border-radius:6px;border-left:2px solid var(--border)">
+          <span style="color:var(--accent);font-weight:500">Nos seus dados:</span> ${g.example}
+        </div>
+      </div>`;
+  });
+})();
+
+function buildBikeCharts() {
+  // ── Speed chart ──
+  const bikeWithSpd = BIKES.filter(b => b.speed_kmh && b.dist_km >= 1);
+  new Chart(document.getElementById('bikeSpeedChart'), {
+    type: 'line',
+    data: {
+      labels: bikeWithSpd.map(b => b.date.slice(5)),
+      datasets: [{
+        data: bikeWithSpd.map(b => b.speed_kmh),
+        borderColor: 'rgba(59,130,246,0.5)',
+        backgroundColor: 'rgba(59,130,246,0.05)',
+        borderWidth: 1.5,
+        pointRadius: 3,
+        pointBackgroundColor: bikeWithSpd.map(b => b.speed_kmh > 20 ? '#3b82f6' : 'rgba(59,130,246,0.4)'),
+        fill: true,
+        tension: 0.3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: getVar('--surface'), borderColor: getVar('--border'), borderWidth: 1,
+          titleColor: getVar('--text'), bodyColor: getVar('--muted'), padding: 10,
+          titleFont: { family: 'Inter', size: 12 }, bodyFont: { family: 'Inter', size: 11 },
+          callbacks: {
+            title: ctx => bikeWithSpd[ctx[0].dataIndex]?.date + ' · ' + bikeWithSpd[ctx[0].dataIndex]?.dist_km.toFixed(1) + ' km',
+            label: ctx => 'Velocidade: ' + ctx.raw.toFixed(1) + ' km/h'
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, maxTicksLimit: 14 } },
+        y: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: v => v+' km/h' } }
+      }
+    }
+  });
+
+  // ── Volume mensal ──
+  const bm = {};
+  BIKES.forEach(b => { const k = b.date.slice(0,7); bm[k] = (bm[k]||0) + b.dist_km; });
+  const bmMonths = Object.keys(bm).sort();
+  const mNames = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  new Chart(document.getElementById('bikeVolumeChart'), {
+    type: 'bar',
+    data: {
+      labels: bmMonths.map(m => { const [y,mo] = m.split('-'); return mNames[+mo-1]+"'"+y.slice(2); }),
+      datasets: [{
+        data: bmMonths.map(m => +bm[m].toFixed(1)),
+        backgroundColor: bmMonths.map(m => bm[m] > 30 ? 'rgba(59,130,246,0.6)' : 'rgba(59,130,246,0.25)'),
+        borderColor: 'rgba(59,130,246,0.5)', borderWidth: 1, borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: getVar('--surface'), borderColor: getVar('--border'), borderWidth: 1, titleColor: getVar('--text'), bodyColor: getVar('--muted'), padding: 10, callbacks: { label: ctx => ctx.raw.toFixed(1) + ' km' } } },
+      scales: {
+        x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } } },
+        y: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: v => v+'km' } }
+      }
+    }
+  });
+
+  // ── Dist dist ──
+  const bd = { '<2km':0,'2–5km':0,'5–8km':0,'8–12km':0,'>12km':0 };
+  BIKES.forEach(b => {
+    if (b.dist_km<2) bd['<2km']++;
+    else if (b.dist_km<5) bd['2–5km']++;
+    else if (b.dist_km<8) bd['5–8km']++;
+    else if (b.dist_km<12) bd['8–12km']++;
+    else bd['>12km']++;
+  });
+  new Chart(document.getElementById('bikeDistChart'), {
+    type: 'bar',
+    data: {
+      labels: Object.keys(bd),
+      datasets: [{ data: Object.values(bd), backgroundColor: ['rgba(113,113,122,0.4)','rgba(59,130,246,0.25)','rgba(59,130,246,0.5)','rgba(59,130,246,0.35)','rgba(249,115,22,0.4)'], borderColor: ['#71717a','#3b82f6','#3b82f6','rgba(59,130,246,0.6)','#f97316'], borderWidth: 1, borderRadius: 3 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: getVar('--surface'), borderColor: getVar('--border'), borderWidth: 1, titleColor: getVar('--text'), bodyColor: getVar('--muted'), padding: 10, callbacks: { label: ctx => ctx.raw + ' pedaladas' } } },
+      scales: {
+        x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } } },
+        y: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: v => v+'x' } }
+      }
+    }
+  });
+
+  // ── Table ──
+  const btbody = document.getElementById('bikeTableBody');
+  [...BIKES].reverse().forEach(b => {
+    const isWatch = b.source === 'apple_health';
+    const color = isWatch ? '#ef4444' : '#3b82f6';
+    const srcName = isWatch ? 'Apple Watch' : 'Strava';
+    const dur = Math.floor(b.duration_min) + 'min ' + Math.round((b.duration_min%1)*60) + 's';
+    const spdClass = b.speed_kmh > 20 ? 'pace-fast' : b.speed_kmh < 14 ? 'pace-slow' : '';
+    btbody.innerHTML += `<tr>
+      <td>${b.date}</td>
+      <td><span class="dot" style="background:${color}"></span>${srcName}</td>
+      <td style="color:var(--muted);font-size:12px">${b.name || '—'}</td>
+      <td>${b.dist_km.toFixed(2)} km</td>
+      <td>${dur}</td>
+      <td class="${spdClass}">${b.speed_kmh ? b.speed_kmh.toFixed(1)+' km/h' : '—'}</td>
+      <td>${b.hr_avg ? b.hr_avg+' bpm' : '—'}</td>
+      <td>${b.calories > 0 ? b.calories+' kcal' : '—'}</td>
+      <td>${b.elev_m != null ? b.elev_m+'m' : '—'}</td>
+    </tr>`;
+  });
+}
+</script>
+</body>
+</html>
