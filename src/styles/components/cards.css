@@ -1,0 +1,72 @@
+/* ── KPI GRID ── */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.kpi { background: var(--surface); padding: 20px 18px; }
+.kpi-label { font-size: 11px; color: var(--muted); margin-bottom: 6px; }
+.kpi-value {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.kpi-value.green { color: var(--accent); }
+.kpi-value.orange { color: var(--accent2); }
+.kpi-value.blue { color: var(--blue); }
+.kpi-sub { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+/* ── BIO ── */
+.bio-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.bio-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.bio-label { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+.bio-value {
+  font-family: 'Inter Tight', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.bio-unit { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.bio-bar { height: 3px; background: var(--border); border-radius: 2px; margin-top: 12px; overflow: hidden; }
+.bio-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+.bio-hint { font-size: 10px; color: var(--muted); margin-top: 6px; }
+
+/* ── INSIGHTS ── */
+.insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.insight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.insight-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+.insight-icon.g { background: rgba(34,197,94,.12); color: var(--accent); }
+.insight-icon.o { background: rgba(249,115,22,.12); color: var(--accent2); }
+.insight-icon.b { background: rgba(96,165,250,.12); color: var(--blue); }
+.insight-text { font-size: 13px; line-height: 1.55; color: var(--text); }
+.insight-text b { color: var(--accent); font-weight: 600; }
+.insight-text em { color: var(--accent2); font-style: normal; font-weight: 500; }
