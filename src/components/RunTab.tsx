@@ -28,25 +28,27 @@ const RunTab: React.FC = () => {
         <div className="zones-grid">
           <div className="zones-card">
             <h4>Zonas de pace de treino</h4>
-            <div className="zone-row">
-              <span>Recuperação / Fácil</span>
-              <span className="zone-pace" style={{ color: 'var(--muted)' }}>6:30 – 7:00</span>
-              <span className="zone-desc">80% dos treinos</span>
-            </div>
-            <div className="zone-row">
-              <span>Tempo / Limiar</span>
-              <span className="zone-pace" style={{ color: 'var(--accent2)' }}>5:15 – 5:35</span>
-              <span className="zone-desc">10–15 min contínuos</span>
-            </div>
-            <div className="zone-row">
-              <span>Intervalado / VO2</span>
-              <span className="zone-pace" style={{ color: 'var(--accent)' }}>4:40 – 5:00</span>
-              <span className="zone-desc">400–1200 m repetições</span>
-            </div>
-            <div className="zone-row">
-              <span>Prova 5 km</span>
-              <span className="zone-pace" style={{ color: '#eab308' }}>4:55 – 5:05</span>
-              <span className="zone-desc">meta semana 8</span>
+            <div className="zones-table">
+              <div className="zone-row">
+                <span className="zone-label">Recuperação / Fácil</span>
+                <span className="zone-pace">6:30 – 7:00</span>
+                <span className="zone-desc">80% dos treinos</span>
+              </div>
+              <div className="zone-row">
+                <span className="zone-label">Tempo / Limiar</span>
+                <span className="zone-pace">5:15 – 5:35</span>
+                <span className="zone-desc">10–15 min contínuos</span>
+              </div>
+              <div className="zone-row">
+                <span className="zone-label">Intervalado / VO2</span>
+                <span className="zone-pace">4:40 – 5:00</span>
+                <span className="zone-desc">400–1200 m repetições</span>
+              </div>
+              <div className="zone-row">
+                <span className="zone-label">Prova 5 km</span>
+                <span className="zone-pace" style={{ color: '#eab308' }}>4:55 – 5:05</span>
+                <span className="zone-desc">meta semana 8</span>
+              </div>
             </div>
           </div>
           <RunTips />
