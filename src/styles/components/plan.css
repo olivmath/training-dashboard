@@ -1,59 +1,51 @@
 /* ── PLAN ── */
 .plan-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 10px; }
-.week-col { display: flex; flex-direction: column; gap: 6px; }
-.week-head {
-  font-family: 'Inter Tight', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  padding-bottom: 6px;
-  border-bottom: 2px solid var(--border);
-  color: var(--muted);
-  margin-bottom: 2px;
-}
-.week-col.now .week-head { color: var(--accent); border-color: var(--accent); }
-.week-focus { font-size: 10px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.06em; }
-.week-col.now .week-focus { color: var(--accent); }
+.week-col { display: flex; flex-direction: column; gap: 8px; padding: 12px; border-radius: 12px; border: 2px solid transparent; }
+
+/* Destaque semana atual */
+.week-col.current { border-color: var(--accent); box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.2); }
+
+.week-header { display: flex; justify-content: space-between; align-items: center; }
+.week-label { font-size: 20px; font-weight: 800; font-family: 'Inter Tight', sans-serif; }
+.week-vol { font-size: 11px; color: var(--muted); background: var(--surface-variant); padding: 2px 6px; border-radius: 4px; }
+.current-tag { font-size: 8px; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; }
+
+.week-focus { font-size: 10px; color: var(--muted); text-transform: uppercase; }
+.intensity-bar { display: flex; gap: 2px; margin-top: 4px; }
+.bar { height: 3px; width: 100%; background: var(--surface-variant); }
+.bar.active { background: var(--accent); }
+
+/* Fases (Identidade Visual) */
+.week-col.base { border-top: 4px solid #4ade80; }
+.week-col.ritmo { border-top: 4px solid #3b82f6; }
+.week-col.intervalos { border-top: 4px solid #f97316; }
+.week-col.consolida { border-top: 4px solid #a855f7; }
+.week-col.carga { border-top: 4px solid #ef4444; }
+.week-col.pico { border-top: 4px solid #f59e0b; }
+.week-col.afinamento { border-top: 4px solid #eab308; }
+.week-col.teste { border-top: 4px solid #fbbf24; }
+
 .sesh {
   border-radius: 8px;
-  padding: 10px 10px 8px;
-  border: 1px solid transparent;
+  padding: 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  min-height: 72px;
-  justify-content: space-between;
-  cursor: pointer;
-  transition: filter 0.15s;
+  gap: 4px;
 }
-.sesh:hover { filter: brightness(1.15); }
-.sesh.rest { cursor: default; filter: none !important; }
+.sesh:hover { border-color: var(--accent); }
+.sesh.rest { cursor: default; opacity: 0.6; }
 
-/* ── cor por letra ── */
-.sesh-a { background: rgba(248,113,113,.22); border-color: rgba(248,113,113,.45); }
-.sesh-b { background: rgba(148,163,184,.12); border-color: rgba(148,163,184,.25); }
-.sesh-c { background: rgba(251,146, 60,.22); border-color: rgba(251,146, 60,.45); }
-.sesh-d { background: rgba(192,132,252,.18); border-color: rgba(192,132,252,.38); }
-.sesh-e { background: rgba( 52,211,153,.22); border-color: rgba( 52,211,153,.45); }
+.key-workout { border: 2px solid var(--accent); }
+.key-badge { font-size: 8px; font-weight: 700; color: var(--accent); text-transform: uppercase; margin-bottom: 2px; }
 
-.sesh-day { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: rgba(255,255,255,.45); }
-.sesh-name { font-size: 22px; font-weight: 800; font-family: 'Inter Tight', sans-serif; letter-spacing: -0.5px; line-height: 1; }
-.sesh-a .sesh-name { color: #f87171; }
-.sesh-b .sesh-name { color: #94a3b8; }
-.sesh-c .sesh-name { color: #fb923c; }
-.sesh-d .sesh-name { color: #c084fc; }
-.sesh-e .sesh-name { color: #34d399; }
+.sesh-meta { display: flex; justify-content: space-between; align-items: center; }
+.sesh-day { font-size: 9px; font-weight: 700; color: var(--muted); text-transform: uppercase; }
+.sesh-summary { font-size: 9px; color: var(--text); }
+.sesh-name { font-size: 13px; font-weight: 700; line-height: 1.2; }
 
-.sesh-tag {
-  font-size: 8px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 2px 6px;
-  border-radius: 20px;
-  align-self: flex-start;
-  background: rgba(0,0,0,.25);
-  color: rgba(255,255,255,.65);
-}
 
 /* ── ZONES ── */
 .zones-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
