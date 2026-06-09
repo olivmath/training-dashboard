@@ -12,8 +12,7 @@ import {
   Legend,
   Filler,
 } from 'chart.js';
-import Navbar from './components/Navbar';
-import Tabs from './components/Tabs';
+import AppHeader from './components/AppHeader';
 import RunTab from './components/RunTab';
 import BikeTab from './components/BikeTab';
 import GlossaryTab from './components/GlossaryTab';
@@ -44,17 +43,12 @@ const App: React.FC = () => {
 
   return (
     <div className="app-root">
-      <Navbar
-        totalRuns={totalRuns}
-        totalDistRun={totalDistRun}
-        toggleTheme={toggleTheme}
-      />
-
-      <Tabs
+      <AppHeader
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         totalRuns={totalRuns}
         totalDistRun={totalDistRun}
+        toggleTheme={toggleTheme}
       />
 
       <div className="container main-content">
