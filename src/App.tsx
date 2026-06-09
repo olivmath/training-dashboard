@@ -15,6 +15,7 @@ import {
 import AppHeader from './components/AppHeader';
 import RunTab from './components/RunTab';
 import BikeTab from './components/BikeTab';
+import GlossaryTab from './components/GlossaryTab';
 import FAQTab from './components/FAQTab';
 import { useRunData } from './hooks/useRunData';
 
