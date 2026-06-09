@@ -2,8 +2,8 @@ import React from 'react';
 import { BIKES } from '../data/dashboardData';
 
 interface AppHeaderProps {
-  activeTab: 'run' | 'bike' | 'glossary';
-  setActiveTab: (tab: 'run' | 'bike' | 'glossary') => void;
+  activeTab: 'run' | 'bike' | 'glossary' | 'faq';
+  setActiveTab: (tab: 'run' | 'bike' | 'glossary' | 'faq') => void;
   totalRuns: number;
   totalDistRun: number;
   toggleTheme: () => void;
@@ -51,6 +51,12 @@ const AppHeader: React.FC<AppHeaderProps> = ({
             onClick={() => setActiveTab('glossary')}
           >
             📖 Glossário
+          </button>
+          <button
+            className={`tab-btn ${activeTab === 'faq' ? 'active' : ''}`}
+            onClick={() => setActiveTab('faq')}
+          >
+            ❓ FAQ
           </button>
         </div>
       </div>
