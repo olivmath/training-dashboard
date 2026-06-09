@@ -31,7 +31,68 @@ A React-based dashboard for tracking and planning triathlon training (Run, Bike,
 *   `npm run preview`: Locally preview the production build.
 *   `npm run deploy`: Build and deploy the application to GitHub Pages.
 
+## Architectural Map
+
+The application follows a unidirectional data flow and a modular component structure:
+
+1.  **Data Layer (`src/data/`):** Static TypeScript files containing raw datasets and type definitions.
+2.  **Logic Layer (`src/hooks/`):** Custom hooks that consume raw data, perform aggregations, and provide computed values (KPIs, chart data) to components.
+3.  **UI Layer (`src/components/`):**
+    *   **Layout/Containers:** `App.tsx` and high-level tab components (`RunTab`, `BikeTab`).
+    *   **Feature Modules:** Components specific to a sport (e.g., `RunKPIs`, `BikeTable`).
+    *   **Common/Atomic:** Reusable, stateless UI atoms (e.g., `KPICard`, `ChartCard`).
+
+---
+
+## File Tree & Component Ownership
+
+To prevent duplication, always verify if a component or utility already exists in the appropriate directory:
+
+```text
+src/
+├── components/          # UI COMPONENTS
+│   ├── common/         # REUSABLE/GENERIC (Check here first!)
+│   │   ├── BioCard.tsx
+│   │   ├── ChartCard.tsx
+│   │   ├── InsightCard.tsx
+│   │   └── KPICard.tsx
+│   ├── BikeTab/        # BIKE-SPECIFIC MODULES
+│   │   ├── BikeCharts.tsx
+│   │   ├── BikeInsights.tsx
+│   │   ├── BikeKPIs.tsx
+│   │   └── BikeTable.tsx
+│   ├── RunTab/         # RUN-SPECIFIC MODULES
+│   │   ├── RunBio.tsx
+│   │   ├── RunCharts.tsx
+│   │   ├── RunInsights.tsx
+│   │   ├── RunKPIs.tsx
+│   │   ├── RunTable.tsx
+│   │   └── RunTips.tsx
+│   ├── AppHeader.tsx   # Global Header
+│   ├── WorkoutModal.tsx # Shared Modal for Plans
+│   └── ...
+├── hooks/              # DATA LOGIC & STATE
+│   ├── useBikeData.ts  # Bike aggregations
+│   └── useRunData.ts   # Run aggregations
+├── data/               # SOURCE OF TRUTH (DATA)
+│   ├── dashboardData.ts # Main dataset
+│   ├── workoutPlans/   # Run plans
+│   └── bikeWorkoutPlans/ # Bike plans
+├── styles/             # CSS & THEME
+│   ├── variables.css   # Design Tokens (Colors, Spacing)
+│   ├── components/     # Component-specific styles
+│   └── ...
+└── utils/              # PURE HELPERS
+    ├── charts.ts       # Chart.js config helpers
+    └── math.ts         # Calculation helpers
+```
+
 ## Development Conventions
+
+### 🚫 No Duplication Mandate
+*   **Search First:** Before creating a new component, search `src/components/common/` and the relevant feature folder.
+*   **Promote to Common:** If a component is needed in both `RunTab` and `BikeTab`, move it to `src/components/common/` and generalize its props.
+*   **Shared Logic:** Business logic must reside in `src/hooks/` or `src/utils/`, never duplicated inside component files.
 
 ### Data Management
 *   **Static Data:** All historical data is located in `src/data/dashboardData.ts`. This includes `RUNS`, `BIKES`, and `GLOSSARY` arrays.
