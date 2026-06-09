@@ -106,15 +106,6 @@ const WEEKS: WeekData[] = [
 ];
 
 
-const TAG_LABELS: Record<WorkoutType, string> = {
-  easy:  'fácil',
-  tempo: 'tempo',
-  intv:  'intervalado',
-  long:  'longo',
-  rest:  'descanso',
-  race:  'prova',
-};
-
 export const TrainingPlan: React.FC = () => {
   const [openId, setOpenId] = useState<string | null>(null);
   const openWorkout = WORKOUT_PLANS[openId ?? ''] ?? null;
