@@ -1,4 +1,4 @@
-import { Workout } from '../workoutPlans/types';
+import type { Workout } from '../workoutPlans/types';
 
 export const BIKE_WEEKS_5_6: Record<string, Workout> = {
   'b5-seg': {

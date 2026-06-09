@@ -1,5 +1,5 @@
 import React from 'react';
-import { BIKES, RUNS } from '../data/dashboardData';
+import { BIKES } from '../data/dashboardData';
 
 interface NavbarProps {
   totalRuns: number;

@@ -1,4 +1,4 @@
-import { Workout } from './types';
+import type { Workout } from './types';
 
 export const WEEKS_3_4: Record<string, Workout> = {
   's3-seg': {

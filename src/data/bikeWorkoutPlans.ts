@@ -1,4 +1,4 @@
-import { Workout } from './workoutPlans/types';
+import type { Workout } from './workoutPlans/types';
 import { BIKE_WEEKS_1_2 } from './bikeWorkoutPlans/weeks1-2';
 import { BIKE_WEEKS_3_4 } from './bikeWorkoutPlans/weeks3-4';
 import { BIKE_WEEKS_5_6 } from './bikeWorkoutPlans/weeks5-6';
