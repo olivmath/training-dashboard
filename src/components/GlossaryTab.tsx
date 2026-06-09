@@ -5,20 +5,20 @@ const GlossaryTab: React.FC = () => {
   return (
     <div id="tab-glossary" className="tab-pane active">
       <section>
-        <div className="section-label">Glossário · todos os termos usados neste dashboard</div>
-        <div id="glossaryGrid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+        <div className="section-label">Glossário · termos técnicos</div>
+        <div className="glossary-grid">
           {GLOSSARY.map((g, i) => (
-            <div key={i} className="insight-card" style={{ flexDirection: 'column', gap: '10px', alignItems: 'stretch' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <span style={{ fontSize: '20px' }}>{g.emoji}</span>
-                <div>
-                  <div style={{ fontWeight: 600, fontSize: '14px' }}>{g.term}</div>
-                  <div style={{ fontSize: '11px', color: 'var(--muted)' }}>{g.unit}</div>
+            <div key={i} className="glossary-card">
+              <div className="glossary-head">
+                <span className="glossary-emoji">{g.emoji}</span>
+                <div className="glossary-title">
+                  <div className="glossary-term">{g.term}</div>
+                  <div className="glossary-unit">{g.unit}</div>
                 </div>
               </div>
-              <div style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text)' }}>{g.def}</div>
-              <div style={{ fontSize: '11px', color: 'var(--muted)', background: 'var(--bg)', padding: '8px 10px', borderRadius: '6px', borderLeft: '2px solid var(--border)' }}>
-                <span style={{ color: 'var(--accent)', fontWeight: 500 }}>Nos seus dados:</span> {g.example}
+              <div className="glossary-def">{g.def}</div>
+              <div className="glossary-example">
+                <span className="label">Nos seus dados:</span> {g.example}
               </div>
             </div>
           ))}

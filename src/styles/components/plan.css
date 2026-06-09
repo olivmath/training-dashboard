@@ -47,11 +47,28 @@
 .sesh-name { font-size: 13px; font-weight: 700; line-height: 1.2; }
 
 
-/* ── ZONES ── */
-.zones-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px; }
-.zones-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
-.zones-card h4 { font-size: 12px; color: var(--muted); font-weight: 500; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.06em; }
-.zone-row { display: grid; grid-template-columns: 120px 90px 1fr; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--border); align-items: center; font-size: 13px; }
-.zone-row:last-child { border-bottom: none; }
-.zone-pace { font-family: 'Inter Tight', sans-serif; font-weight: 600; }
-.zone-desc { font-size: 11px; color: var(--muted); }
+/* ── GLOSSARY ── */
+.glossary-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.glossary-card { 
+  background: var(--surface); 
+  border: 1px solid var(--border); 
+  border-radius: 12px; 
+  padding: 16px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+.glossary-head { display: flex; align-items: center; gap: 12px; }
+.glossary-emoji { font-size: 24px; }
+.glossary-term { font-weight: 700; font-size: 15px; }
+.glossary-unit { font-size: 11px; color: var(--muted); }
+.glossary-def { font-size: 13px; line-height: 1.5; color: var(--text); }
+.glossary-example { 
+  font-size: 11px; 
+  background: var(--surface-variant); 
+  padding: 8px 12px; 
+  border-radius: 8px; 
+  border-left: 3px solid var(--accent);
+}
+.glossary-example .label { color: var(--accent); font-weight: 600; margin-right: 4px; }
+
