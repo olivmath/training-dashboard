@@ -16,6 +16,7 @@ import AppHeader from './components/AppHeader';
 import RunTab from './components/RunTab';
 import BikeTab from './components/BikeTab';
 import GlossaryTab from './components/GlossaryTab';
+import FAQTab from './components/FAQTab';
 import { useRunData } from './hooks/useRunData';
 
 ChartJS.register(
@@ -32,7 +33,7 @@ ChartJS.register(
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-  const [activeTab, setActiveTab] = useState<'run' | 'bike' | 'glossary'>('run');
+  const [activeTab, setActiveTab] = useState<'run' | 'bike' | 'glossary' | 'faq'>('run');
   const { totalRuns, totalDistRun } = useRunData();
 
   useEffect(() => {
@@ -55,6 +56,7 @@ const App: React.FC = () => {
         {activeTab === 'run' && <RunTab />}
         {activeTab === 'bike' && <BikeTab />}
         {activeTab === 'glossary' && <GlossaryTab />}
+        {activeTab === 'faq' && <FAQTab />}
       </div>
     </div>
   );
