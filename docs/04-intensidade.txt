@@ -1,0 +1,246 @@
+# 4 INTENSIDADE
+
+_Lance-se, as respostas mais profundas ao treinamento surgem quando você treina mais rapidamente._
+
+**-RICK NILES**
+
+Atletas de multiesportes geralmente dão muita importância ao volume e pouca à intensidade. É uma pena, porque é a intensidade, e não o volume, que pode elevar a condição física aos níveis mais altos. Por exemplo, em um estudo realizado na Alemanha em 1995 com corredores, quatro semanas com aumentos de intensidade, enquanto o volume permanecia constante, produziram ganhos significativos no desempenho. Contudo, quatro semanas de aumento do volume sem variação da intensidade levaram à estagnação do desempenho. Neste estudo, a condição física foi medida de acordo com o tempo até a exaustão correndo em uma esteira e a velocidade em distâncias aproximadas de 15 km e maratona. As três medições melhoraram significativamente após quatro semanas de alta intensidade, mas o alto volume só melhorou o ritmo na maratona, e por uma margem leve.
+
+Isso não significa que o volume de treinamento não seja importante, ou que as distâncias curtas constituam o método para alcançar o desempenho máximo. Todos os desportistas têm uma combinação adequada de volume e intensidade que devem descobrir, em grande parte, por meio de tentativa e erro. Este é o princípio da individualidade que comentamos no capítulo anterior. Os capítulos seguintes te ajudarão a determinar um volume e uma intensidade apropriados para o seu treinamento. Por enquanto, no entanto, nosso objetivo é que você entenda melhor a intensidade no treinamento.
+
+## LUTA CONTRA AS CAUSAS DA FADIGA
+
+“Condição física” é um termo de algum modo escorregadio. O que significa “ter uma boa condição física”? O certo é que condição física significa coisas distintas para diferentes pessoas. É melhor defini-la com base na atividade para a qual se está preparando. Por exemplo, um fisiculturista pode ter a mesma condição física que um corredor de maratonas, mas de um modo diferente. Quando se trata de esportes de resistência, como o triatlo e o duatlo, a condição física é a capacidade de resistir ou atrasar a fadiga na velocidade desejada. Reduzir a fadiga significa correr mais rapidamente com o mesmo esforço. Seguindo os objetivos deste livro, vamos definir condição física em relação à limitação da fadiga.
+
+Então, o motivo pelo qual treinamos é reduzir os efeitos da fadiga que acompanham um esforço similar ao da competição. Parece bastante simples, mas, para complicar as coisas, há pelo menos três causas fisiológicas da fadiga que atrasam o desportista de resistência:
+
+1. Acúmulo de íons de hidrogênio nos músculos e no sangue.
+2. Esgotamento do combustível baseado em carboidratos armazenado nos músculos (glicogênio) e no sangue (glicose).
+3. Falha dos mecanismos de contração muscular.
+
+Um programa de treinamento baseado na ciência melhora a condição física trabalhando os sistemas associados às causas da fadiga. O que vem a seguir é um breve resumo sobre como o treinamento ajuda a melhorar a resistência em cada um.
+
+## FORMAÇÃO DE ÍONS DE HIDROGÊNIO
+
+Para produzir energia para o movimento, os músculos empregam principalmente gordura e carboidratos como combustível. Quando os carboidratos, a fonte de energia baseada no açúcar, se degradam, ocorre a produção de ácido lático nos músculos. Como esse ácido lático se filtra das células musculares para o sangue e os líquidos corporais que as rodeiam, são liberados íons de hidrogênio; o sal resultante é chamado lactato. A quantidade de íons de hidrogênio e lactato aumenta à medida que a intensidade do exercício cresce. Com baixos níveis de produção, o corpo os elimina e os recicla de forma eficaz. Mesmo enquanto você está lendo esta página, íons de hidrogênio e lactato estão aparecendo e desaparecendo rapidamente em seu sangue.
+
+O nível de esforço em que o corpo passa de aeróbico (respiração suave) para anaeróbico (respiração dificultosa) é marcado por uma produção de hidrogênio e lactato tão rápida que o corpo não é capaz de manter sua eliminação. O que realmente nos preocupa são os íons de hidrogênio, mas a medição do lactato é um modo indireto de saber quanto hidrogênio está presente. Quando o lactato começa a se acumular no sangue, os íons de hidrogênio interferem na produção de energia e nas contrações musculares, causando fadiga. Esse tipo de fadiga ocorre em competições muito curtas de alta intensidade, como os triatlos distância sprint, e somente durante esforços máximos, como um sprint final ou uma subida curta.
+
+Essa não é a principal causa de fadiga na maioria das competições multiesportivas. Não obstante, se você normalmente participa de competições curtas, isso pode ser um limitador para você. Em competições mais longas, se você acelera com potência ou sobe ladeiras em condição anaeróbica, experimentará uma fadiga de curto prazo da mesma maneira. A forma de melhorar a capacidade do corpo para eliminar os íons de hidrogênio e sua tolerância à acidez consiste em realizar esforços curtos de alta intensidade, seguidos de longas recuperações. As especificidades desse tipo de treinamento são tratadas em capítulos posteriores. Os treinamentos de resistência anaeróbica dos apêndices B, C, D e E o ajudarão a melhorar sua resistência em relação a esse tipo de fadiga.
+
+## ESGOTAMENTO DO COMBUSTÍVEL
+
+A gordura é a principal fonte de combustível em níveis baixos de esforço, como os que você realizará durante um percurso de bicicleta longo e lento. À medida que o exercício se intensifica, o corpo vai convertendo os carboidratos em combustível e emprega menos gordura.
+
+Descrição de figura 4.1... Gráfico mostrando a transição de uso de gordura para carboidratos conforme a intensidade aumenta... Voltando ao texto.
+
+Os carboidratos são armazenados nos músculos e no fígado como glicogênio e se encontram no sangue como glicose. A qualquer momento, um desportista bem nutrido tem entre 1.500 e 2.000 calorias de glicogênio armazenado e glicose disponível para uso. Isso depende do tamanho do corpo e do nível de condição física do atleta, com cerca de 75% nos músculos. Ao participar em competições de triatlo distância olímpica (1.500 m de natação, 40 km de bicicleta e 10 km de corrida), um triatleta pode queimar 1.000 calorias por hora, 650 provenientes dos carboidratos. É fácil observar que, a esse ritmo, a glicose e o glicogênio armazenados podem esgotar-se antes que o atleta alcance a meta. No entanto, em um Ironman, que dura 8 horas ou mais, queimam-se entre 500 e 1.000 calorias de glicogênio por hora. Como resultado, é imperativo que os triatletas ingiram grandes quantidades de carboidratos durante essas competições.
+
+Um programa de treinamento que melhora a capacidade do corpo para armazenar e usar o glicogênio de forma mais eficaz aumenta a resistência. Quando você treina em um estado baixo de glicogênio, o corpo reage armazenando mais carboidratos, o que aumenta as reservas. Para conseguir isso, a maioria dos atletas faz sua primeira sessão de treinamento pela manhã antes de comer, ou depois de ter feito uma dieta muito baixa em carboidratos. Em capítulos posteriores, o tema é tratado mais detalhadamente.
+
+## DESIDRATAÇÃO
+
+Uma perda de líquidos de apenas 2% do peso corporal pode reduzir o desempenho em até 20%. Isso ocorre porque a desidratação reduz o volume do sangue, o que faz com que o coração tenha que trabalhar mais para bombear a mesma quantidade de sangue e de oxigênio para os músculos que trabalham, e isso provoca um aumento da FC. Portanto, o desportista tem que parar antes ou reduzir a intensidade do seu treinamento para manter a mesma FC. Há muitas evidências científicas que demonstram a importância de se manter hidratado. Não custa ressaltar que uma boa hidratação é fundamental para o desempenho do desportista de resistência.
+
+Embora não haja uma forma simples de medir e analisar o nível de desidratação em tempo real durante o treinamento, algumas coisas podem ser feitas para evitá-la. Se a urina é de cor amarelo claro, é provável que você não esteja desidratado. Se você sente sede, está desidratado. É preciso beber antes de sentir sede. Após o treinamento, é importante repor os líquidos perdidos. A maioria dos desportistas pesa menos após o treinamento. Para cada quilo que você perder, é preciso beber cerca de 1 litro de líquido.
+
+## HIPERTERMIA
+
+O aumento da temperatura corporal pode reduzir o desempenho. As evidências científicas são claras: um desportista rende melhor quando o corpo está fresco. Assim como acontece com a desidratação, a hipertermia é um problema que não se pode medir em tempo real, mas pode ser combatida com várias estratégias, como usar roupas de cor clara, beber líquidos frios e aplicar água na pele.
+
+A combinação da desidratação e da hipertermia é um grave risco para a saúde do desportista de resistência em competições que se realizam com tempo quente, úmido e sem sombra. Os esportes de resistência que duram horas nessas condições podem provocar um golpe de calor. Para os treinamentos que se realizam nessas condições, é essencial que o atleta tenha uma estratégia para evitar os perigos de um golpe de calor.
+
+## MEDIDAS DA INTENSIDADE
+
+Para elaborar um programa de treinamento eficaz, primeiro você precisa saber qual aspecto da sua condição física quer melhorar. Como comentamos no capítulo 2, “A ciência do treinamento”, os triatletas têm três das seguintes capacidades-chave: resistência, força e velocidade. Depois, e o que é mais importante, você precisa encontrar a intensidade de treinamento ideal para melhorar a capacidade escolhida, e isso requer o uso de algum tipo de medidor de intensidade. Há muitas formas de medir a intensidade, algumas mais objetivas que outras. A seguir, apresentamos as mais comuns:
+
+*   Esforço percebido.
+*   Ritmo (velocidade).
+*   Frequência cardíaca.
+*   Potência.
+*   Limiar de lactato (LL).
+
+## ESFORÇO PERCEBIDO
+
+A mais subjetiva das medidas de intensidade, mas possivelmente a mais útil, é o esforço percebido. É simplesmente como você se sente durante o exercício. O desportista com experiência e que conhece seu corpo geralmente é um bom juiz do que pode fazer. Também é a medida de intensidade que se usava antes de o monitor de frequência cardíaca ser inventado. Ainda assim, continua sendo útil para a maioria das sessões de treinamento. Você pode até usar seu esforço percebido para calibrar outros dispositivos de medição de intensidade. Com o tempo, você acabará sabendo como seu corpo se sente em distintas intensidades, de modo que um exercício a uma FC de 150 bpm ou a uma potência de 250 watts sempre terá um certo esforço percebido.
+
+Como se trata de uma medida subjetiva, não existem zonas estritas de treinamento do esforço percebido. Não obstante, tem sido muito utilizada uma escala de esforço percebido, a escala de Borg. É uma escala de 6 a 20, em que 6 não é nenhum esforço e 20 é um esforço máximo. Os valores intermediários têm uma relação direta com sua FC. Assim, um 12 na escala de Borg representa uma FC de 120 bpm (12 x 10). A escala de Borg não é útil para sessões de treinamento curtas e de alta intensidade. Para um esforço percebido do triatleta, é mais útil uma escala de 1 a 10. A tabela 4.1 é um exemplo de escala de esforço percebido para o triatleta.
+
+Descrição de tabela 4.1... Tabela comparando a escala de esforço de 1 a 10 com a descrição do esforço e a relação com o limiar de lactato... Voltando ao texto.
+
+## RITMO
+
+Uma forma muito simples e objetiva de medir a intensidade é o ritmo ou a velocidade. É usada na natação, no ciclismo e na corrida. Embora seja uma forma simples de medir a intensidade, é preciso saber como o ritmo se compara à condição física. Por exemplo, correr a um ritmo de 5 min/km em uma pista é mais fácil do que fazê-lo em uma trilha de montanha. Em outras palavras, o ritmo tem que se relacionar com o terreno. Mas a maior desvantagem é que o ritmo só é útil como medida da intensidade em uma competição se o desportista mantiver a mesma velocidade. Uma exceção importante é o medidor de ritmo para natação.
+
+Há diferentes tipos de medidores de ritmo na natação, mas o mais comum é o que indica em que parte do treinamento de natação você deve estar. Os nadadores o empregam para se manter no caminho certo durante um treinamento. Alguns deles são fixados na parede ou colocados no fundo da piscina e emitem flashes de luz. Para se manter no caminho certo, o nadador só tem que se manter à frente das luzes.
+
+Muitos desportistas usam um monitor de FC ou um medidor de potência quando estão correndo ou em bicicleta. Essas ferramentas fornecem informações importantes sobre a condição física. Quando combinadas com um medidor de GPS para o ritmo, oferecem uma imagem mais completa do seu treinamento. Um medidor de GPS fornece a distância percorrida e a velocidade (ritmo), e, portanto, é uma ótima ferramenta para corredores e ciclistas. Assim como o monitor de FC, ele precisa ser calibrado ao limiar de lactato (LL), e suas zonas de treinamento precisam ser atualizadas conforme a melhoria da condição física. Felizmente, um medidor de GPS tem a vantagem de medir com exatidão o ritmo em muitos tipos de terreno.
+
+## FREQUÊNCIA CARDÍACA
+
+A FC tornou-se a medida de intensidade mais usada pelo desportista de resistência médio. Isso ocorre porque um monitor de frequência cardíaca é um dispositivo barato e fácil de usar, e fornece informações instantâneas e objetivas do impacto do treinamento no corpo. Quando usado corretamente, um monitor de frequência cardíaca pode ser uma ferramenta poderosa que o ajudará a treinar de forma inteligente. Mas ele tem seus defeitos. Nem todo o treinamento deve ser baseado na FC. A seguir, são apresentados os prós e os contras do uso da FC como medidor de intensidade:
+
+**Prós**
+*   Barato e fácil de usar.
+*   Fornece informações instantâneas e objetivas.
+
+**Contras**
+*   A FC varia a cada dia.
+*   Demora para responder às mudanças na intensidade.
+*   É afetada por fatores externos como o clima, a altitude, a dieta, o estresse e a fadiga.
+*   É diferente em cada esporte.
+*   A FC não leva em conta a forma.
+*   É diferente para cada indivíduo.
+
+A seguir, cada um desses aspectos é explicado:
+
+### A FC VARIA A CADA DIA
+
+Se você registrar sua FC em repouso todas as manhãs ao acordar, verá que ela é diferente de um dia para o outro. Se ela subir de forma significativa e permanecer alta, isso é um sinal de que seu corpo está estressado e possivelmente em *overtraining*. Nos dias de descanso, sua FC tende a ser mais baixa. Sua FC no treinamento é da mesma forma variável. Como resultado, é um erro pensar que hoje você vai produzir o mesmo trabalho que ontem com a mesma FC. Embora se deva almejar uma determinada FC-alvo para uma sessão de treinamento, você precisa ser flexível quanto à intensidade que vai realizar para alcançar essa FC. Se sua FC estiver alta, talvez você tenha que ir mais devagar. Se ela estiver baixa, talvez você tenha que ir mais rápido.
+
+### DEMORA PARA RESPONDER
+
+A FC demora para responder ao exercício. Quando você passa de um período de descanso ou de um exercício de baixa intensidade para um esforço máximo, leva alguns segundos, às vezes até dois minutos, para subir ao ponto em que se aproxima de um estado estacionário para essa intensidade. Isso significa que a FC não é uma boa medida para o exercício de alta intensidade que é muito curto, como um sprint. O esforço percebido ou a potência seriam, nesses casos, melhores medidas de intensidade.
+
+Há outro atraso que se observa em esportes que requerem uma grande quantidade de força, como o ciclismo e a corrida em ladeiras ou em terreno difícil. Nesses casos, a FC não sobe tão alto quanto deveria em relação ao esforço. Isso ocorre porque a contração muscular limita a quantidade de sangue que pode fluir dos músculos para o coração, e, portanto, o coração bombeia menos. Isso faz com que a FC seja mais baixa do que deveria ser, já que está diretamente relacionada com a quantidade de sangue que volta ao coração. Devido a essa razão, o monitor de FC é uma medida inadequada para o exercício que inclui um componente de força elevado.
+
+### AFETADO POR FATORES EXTERNOS
+
+O calor, a umidade e a altitude podem aumentar sua FC, tornando o exercício na mesma intensidade mais difícil do que o normal. É de se esperar. O que talvez não seja tão evidente é que a dieta também pode afetar a FC. Por exemplo, a cafeína aumentará sua FC, enquanto a falta de sono pode reduzi-la. Os medicamentos também podem ter um impacto. Há muitos fatores estressantes do dia a dia, como estresse profissional ou problemas familiares, que podem aumentar sua FC. À medida que seu corpo se adapta a um clima quente, sua FC-alvo deveria ser mais baixa. Assim, se você não se adaptou completamente a um clima quente, seu corpo compensará esse fator de estresse com uma FC mais alta no início. Mas à medida que seu corpo se aclimata, sua FC voltará ao normal. Essa aclimatação pode levar algumas semanas. Outro fator externo que pode influenciar a FC é o tipo de esporte que você está praticando.
+
+### DIFERENTE EM CADA ESPORTE
+
+A FC é específica para cada esporte. Por exemplo, em uma determinada intensidade de esforço, sua FC de corrida será geralmente mais alta do que sua FC de ciclismo, e sua FC de ciclismo será geralmente mais alta do que sua FC de natação. Os músculos que são mais ativados quando se está na posição vertical (corrida) e o maior estresse gravitacional são as razões pelas quais sua FC é mais alta na corrida do que no ciclismo. A menor FC na natação se deve à natureza horizontal do esporte, à maior imersão e ao uso dos braços na parte superior do corpo, que tendem a ter um volume menor do que as pernas.
+
+### A FC NÃO LEVA EM CONTA A FORMA
+
+A FC não leva em conta a força ou a forma do atleta. Por exemplo, se você faz agachamentos com peso na academia e sua FC chega a 120 bpm, isso não significa que sua condição física seja a mesma que quando você corre e sua FC chega a 120 bpm. Ou seja, a FC por si só não lhe diz como a força ou a técnica estão contribuindo para o esforço total. O monitor de FC é mais útil quando usado em conjunto com outras medidas de intensidade, como o esforço percebido ou a potência.
+
+### É DIFERENTE PARA CADA INDIVÍDUO
+
+Assim como a impressão digital de um indivíduo é única, a FC de um indivíduo também é. Não há duas pessoas com a mesma FC. Por exemplo, para um atleta sua FC máxima de ciclismo pode ser de 180 bpm, enquanto para outro atleta a mesma pode ser de 195 bpm. Isso significa que é importante personalizar as zonas de treinamento para cada indivíduo. É por isso que as recomendações gerais de FC, como 220 menos a idade, são muito imprecisas para uso em treinamento.
+
+### O MONITOR DE FC É UMA FERRAMENTA OU UM TREINADOR?
+
+Como mencionamos anteriormente, o monitor de FC é uma ferramenta muito útil para o desportista de resistência médio. No entanto, é importante lembrar que ele é apenas uma ferramenta e não um treinador. O monitor de FC pode fornecer informações valiosas sobre o impacto do treinamento no seu corpo, mas ele não pode dizer como você se sente ou o que você deve fazer. Você ainda precisa usar seu próprio julgamento e experiência para tomar decisões sobre seu treinamento.
+
+O monitor de FC, por ser um dispositivo barato e fácil de usar, permite que o atleta de resistência avalie a intensidade do treinamento de forma objetiva, porém com algumas deficiências. O maior erro que um desportista pode cometer ao usar um monitor de FC é o de basear todo o seu treinamento exclusivamente na FC. Não existe uma maneira mais fácil de causar *overtraining* do que fazer exatamente isso. Isso também é tão ruim quanto não calcular o esforço de forma alguma.
+
+Se usado com inteligência, no entanto, o monitor de FC pode ajudar a melhorar a condição física e o desempenho na competição. Às vezes, a falta de motivação, um grande entusiasmo, a competição, a perda de perspectiva e um mau julgamento se interpõem no caminho do treinamento inteligente. Nesses casos, ter um monitor de FC é como ter um treinador durante o treinamento. Com um bom conhecimento da FC, com capacidade para usar outras medições da intensidade e um pouco de bom senso derivado da experiência, você pode usar um monitor cardíaco para determinar se está trabalhando muito duro ou não o suficiente, se sua recuperação está completa e como sua condição física progride. Em capítulos posteriores, o tema é tratado mais detalhadamente.
+
+Como acontece com a maioria das medições de intensidade que expúnhamos antes, as zonas de treinamento da FC se ajustam mais aos níveis do limiar de lactato (LL). Frequentemente, a FC máxima é empregada como estimativa do LL, mas isso apresenta certos problemas. Tentar alcançar a maior FC possível em um treinamento requer uma motivação extremamente alta. Além disso, para alguns indivíduos, o exercício nessa intensidade não é seguro. Seu verdadeiro LL é um melhor indicador do que o corpo está experimentando e varia muito de um desportista para outro. Por exemplo, sua FC do limiar de lactato (FCLL), pode se situar em 85% da FC máxima, enquanto a de outro atleta pode estar em 92%. Se ambos treinarem a 90% do máximo, um trabalha bastante duro em condição anaeróbica, mas o outro está cruzando as zonas primordialmente aeróbicas. O uso do percentual da frequência cardíaca máxima para definir seu objetivo no treinamento não é tão preciso quanto o uso das zonas baseado na FCLL. Encontrar sua FCLL requer certo esforço, mas não se assuste. Na realidade, é um procedimento simples que é descrito no capítulo 5.
+
+Assim como com o LL, as zonas da FC variam de acordo com o esporte, já que há diferenças na quantidade de músculos empregados e nos efeitos da gravidade entre os distintos esportes. Para a maioria dos triatletas, a FCLL é maior nos corredores e menor nos nadadores; os ciclistas estão no meio. A produção de lactato também varia com a atividade. Isso significa que cada esporte tem sua própria série de valores da FC. As tabelas 4.4 e 4.5 mostram zonas do treinamento da FC para o ciclismo e a corrida. A natação não é incluída porque treinar com um monitor de FC na água é problemático. O ritmo e a PSE são as melhores medidas da intensidade na natação.
+
+Descrição de tabela 4.4... Zonas de FC para ciclismo baseadas na FCLL... Voltando ao texto.
+Descrição de tabela 4.5... Zonas de FC para corrida baseadas na FCLL... Voltando ao texto.
+
+## POTÊNCIA
+
+Para simplificar as coisas, a potência é a capacidade de aplicar força muscular. Mais precisamente, pode ser definida como:
+
+Potência = força x distância ÷ tempo
+
+Na bicicleta, se você é capaz de aumentar o desenvolvimento enquanto sua cadência permanece constante, sua potência aumenta. Sua potência também aumenta se você puder girar as manivelas mais rápido com o mesmo desenvolvimento. Atualmente não é possível medir diretamente a potência na natação ou na corrida, embora chegará o dia em que se poderá, provavelmente antes no caso da corrida. Muitos atletas de multiesportes, no entanto, usam hoje em dia a potência para dirigir, medir e analisar a intensidade do ciclismo. Dado que a etapa do ciclismo é a mais longa de uma competição, seria um bom investimento adquirir um medidor de potência.
+
+A potência tem mais relação com o desempenho do que qualquer outra medição das que tratamos aqui, e, portanto, constitui um excelente indicador da carga de treinamento. Quanto mais potência você gerar de forma aeróbica, mais possibilidades terá de obter bons resultados em competição. Por exemplo, segundo um estudo, a quantidade de potência gerada durante uma prova de 2 minutos é um melhor indicador da capacidade da prova na bicicleta do que a capacidade aeróbica (VO₂ máx).
+
+Eu peço a todos os triatletas que trabalhem com um medidor de potência. Por quê? Sei que os atletas têm mais probabilidades de alcançar seus objetivos em competição treinando, e competindo, com potência do que sem ela. Eu o vi em todos os desportistas que treinei desde que os medidores de potência chegaram ao mercado há já muitos anos.
+
+Os monitores de FC são muito bons, mas são mais úteis quando combinados com a potência. Com um medidor de potência, um desportista pode converter sua FC em watts. Em vez de confiar apenas em como se sente, o desportista obtém informações objetivas da intensidade estabelecida.
+
+Os medidores de potência eliminam a maioria das conjecturas do treinamento e da competição. Por exemplo, muitos desportistas não consideram que um intervalo de trabalho tenha “começado” até que sua FC atinja o nível objetivo. Com um medidor de potência, o intervalo começa tão logo a potência marca a zona-alvo, ou seja, instantaneamente.
+
+Os monitores de FC ensinam os desportistas a se concentrarem no coração, mas os músculos são a chave real da física, particularmente quando se fazem intervalos. Pode ser um desafio alcançar a intensidade logo no primeiro minuto ou nos primeiros intervalos de um treinamento. Não se pode confiar na FC, já que esta é baixa e demora um par de minutos para aumentar. No entanto, um medidor de potência identifica seu nível de intensidade de forma precisa e imediata.
+
+Utilizar um medidor de potência em uma competição longa como um Ironman é quase como fazer trapaças. Quando todos os outros estão lutando contra o vento de frente, correndo com o vento a favor ou tentando adivinhar o esforço que precisam fazer nas subidas, o triatleta com um medidor de potência só tem que seguir a potência prescrita. Este atleta completará a parte do ciclismo na máxima velocidade possível, deixando energia suficiente para render o melhor possível na corrida, porque a potência-alvo ótima foi calculada durante o treinamento e depois durante a competição. Embora possa-se conseguir algo parecido com a FC, existem alguns fatores que nos podem confundir, como são a variabilidade cardíaca (*cardiac drift*), o efeito agudo da dieta e a resposta lenta do coração nas subidas.
+
+Os medidores de potência também fornecem um perfil altamente preciso sobre como a condição física evolui ao longo da temporada. Eu faço testes nos desportistas que treino regularmente por meio de uma combinação de FC e potência. Sem essa informação, não saberia com certeza se estão fazendo algum progresso; só poderia supor.
+
+Infelizmente, os medidores de potência não são baratos. De qualquer modo, como ocorre sempre com a tecnologia, os preços caem quando aumenta o número de opções. No final, assim como com os monitores de FC, a maioria dos atletas de multiesportes treinará com medidores de potência, e competirão melhor graças a eles. Entre comprar rodas mais rápidas ou um medidor de potência, a segunda é a melhor opção. Pode-se tirar mais proveito de um motor potente.
+
+Treinar com potência, assim como treinar com ritmo, PSE ou um monitor de FC, requer o uso de zonas de treinamento baseadas em um padrão pessoal. O próximo capítulo explica como determinar suas zonas de potência essenciais.
+
+## LACTATO
+
+Se o LL é um fenômeno tão importante, por que não simplesmente medir o lactato no sangue para calcular a intensidade? Até pouco tempo, não era prático verificar os níveis de lactato no mundo real dos atletas de multiesportes na piscina ou na estrada. O único equipamento disponível requeria eletricidade, era caro e pesado, e era melhor usá-lo em um laboratório. Atualmente existem dispositivos que medem o lactato e serviços que os enviam por correio, o que facilita a medição do lactato com uma gota de sangue de um dedo ou do lóbulo da orelha. Este teste continua sendo bastante sofisticado e só é confiável nas mãos de um médico ou um treinador com experiência. Eu não o recomendo para os desportistas que se treinam a si mesmos.
+
+A medição do lactato não fornece um feedback instantâneo do mesmo modo que a potência, o ritmo e a PSE, já que são necessários um minuto ou dois, no mínimo, para extrair e analisar o sangue. A medição frequente por um par de euros cada análise não é prática, nem mesmo com um dispositivo portátil. A conclusão é que é melhor deixar a medição do lactato para os testes. Pode servir para confirmar o LL, avaliar as melhorias, determinar a economia de movimentos ou pedalar na bicicleta com a máxima eficácia, por exemplo.
+
+## TEMPO DE TREINAMENTO POR ZONA DE INTENSIDADE
+
+Quanto tempo você deveria passar em cada zona de FC ao longo da temporada? Os desportistas geralmente fazem essa pergunta, e por uma boa razão: o conhecimento da resposta os conduzirá a um treinamento sensato e efetivo. Infelizmente, não é uma pergunta fácil de responder.
+
+A intensidade-alvo durante o treinamento depende de muitas variáveis diferentes. A mais importante é a competição para a qual você está treinando. Existem tremendas diferenças entre a preparação para um Ironman e uma competição distância sprint. Se nos referirmos às cinco zonas básicas da FC, é óbvio qual é o nosso problema. Preparar-se para uma competição sprint requer muito treinamento perto e acima do LL, mas para um Ironman o esforço não ocorre no treinamento. O treinamento para o Ironman requer que se trabalhe perto do limiar aeróbico. Obviamente, não se pode treinar nas mesmas intensidades para ambas as competições.
+
+Não é possível falar em geral sobre quanto tempo os desportistas deveriam passar durante a temporada em cada zona, nem mesmo se o separamos nas quatro distâncias comuns do triatlo: sprint, olímpico, meio-Ironman e Ironman. A razão é que algumas pessoas, por exemplo, completam uma competição sprint em menos de uma hora, enquanto outros que realizam o mesmo percurso no mesmo dia demoram três horas ou mais. Deixando de lado a distância, o treinamento para uma competição de três horas é muito diferente do treinamento para uma competição de uma hora.
+
+Tenha isso em mente quando você olhar a figura 4.3, a qual sugere a distribuição do tempo de treinamento por zona de FC para uma temporada completa. O objetivo desta figura não é fornecer números específicos aos quais aspirar, mas sim sugestões sobre como distribuir de forma geral o treinamento da intensidade. Saber como sua intensidade pode ser distribuída em zonas no final da temporada o ajudará a tomar decisões sobre o quanto você precisa se esforçar em seus treinamentos.
+
+Se pudéssemos traçar uma curva de distribuição para a maioria dos desportistas que se treinam a si mesmos, seguramente descobriríamos que muitos deles passam muito mais tempo do que o aconselhável nas zonas de FC superiores com as durações que mostra a figura 4.3. Muitos desportistas forçam a máquina demais no treinamento. Esta é a razão pela qual há tantas lesões, *overtraining*, doenças e *burnout* no triatlo.
+
+Descrição de figura 4.3... Gráfico sugerindo a distribuição do tempo de treinamento por zona de FC... Voltando ao texto.
+
+## MEDIÇÃO DA CONDIÇÃO FÍSICA
+
+É um bom momento para começar a unir alguns conceitos da intensidade deste capítulo: limiar aeróbico, frequência cardíaca, ritmo e potência. Todos entram em jogo na hora de determinar se você realizou treinamento suficiente do limiar aeróbico para considerar completo esse aspecto da condição física.
+
+Para chegar a essa determinação, você terá que comparar a frequência cardíaca com a potência ou o ritmo, dependendo do esporte e do equipamento, e ver se ambos têm relação com a existência ou não de variabilidade cardíaca. A variabilidade cardíaca é a tendência da FC de se elevar mesmo que a potência ou o ritmo permaneçam estáveis. Em um desportista aeróbicamente em forma, será mínima. A seguir, explicamos um método avançado que você pode usar para determinar se sua condição física aeróbica é tão boa quanto deveria no final do período base. Este método não é para todos. No entanto, se você é um desportista sério que gosta de analisar os dados de treinamento, pode aprender muito sobre sua condição física utilizando este método.
+
+Em uma bicicleta com um medidor de potência, complete uma sessão de limiar aeróbico. Em seguida, carregue a FC e os dados de potência do medidor de potência em um *software* de análise. O programa divide a parte do limiar aeróbico da sessão em duas metades para comparar a primeira metade com a segunda. Para cada metade, divide a potência média pela FC média para estabelecer uma relação. Em seguida, compara os resultados subtraindo a proporção da primeira metade dessa parte da sessão da proporção da segunda metade e dividindo a diferença pela proporção da primeira metade. Isso produz uma porcentagem de mudança na proporção potência-frequência cardíaca da primeira metade para a segunda da sessão de limiar aeróbico.
+
+Se sua mudança de potência-frequência cardíaca for inferior a 5%, diz-se que o treinamento é “parelho”, ou seja, que as linhas do gráfico da potência e da frequência cardíaca são bastante paralelas, como mostra a figura 4.4. Isso é bom. Mas se a mudança na proporção potência-frequência cardíaca for superior a 5%, o treinamento é “desparelho”, como mostra a figura 4.5. Observe que as duas linhas deste gráfico não são paralelas durante toda a parte do limiar aeróbico do treinamento. Isso não é bom.
+
+Existem duas formas de fazer um treinamento parelho do limiar aeróbico na bicicleta. Você pode pedalar mantendo estável a frequência cardíaca para ver o que acontece com sua potência, ou pode manter uma potência estável e ver o que acontece com sua frequência cardíaca. No período base, geralmente é melhor manter uma frequência cardíaca estável, enquanto no período de desenvolvimento você deveria manter estável a potência. Para empregar os mesmos cálculos na corrida, substitua a potência pelo ritmo e mantenha essa porcentagem de 5% como guia.
+
+Quando as linhas do limiar aeróbico cujo objetivo é a duração da competição da tabela 4.6 são parelhas, eu considero que a condição física do limiar aeróbico está plenamente desenvolvida para essa duração de competição e que o objetivo principal do período base foi cumprido. Quando isso ocorre, um atleta está preparado para fixar objetivos de treinamento mais avançados. O atleta precisa manter a resistência do limiar aeróbico mesmo depois de tê-la desenvolvido, o que pode ser conseguido fazendo o mesmo treinamento que fazia para consegui-la, mas com metade da frequência. Observe que estar aeróbicamente em forma para uma competição sprint não significa estar aeróbicamente em forma para competições de distâncias mais longas, embora se você estiver fisicamente em forma para competições longas, terá a condição física necessária para as distâncias curtas.
+
+Descrição de figura 4.4... Gráfico com linhas paralelas indicando um treinamento parelho... Voltando ao texto.
+Descrição de figura 4.5... Gráfico com linhas não paralelas indicando um treinamento desparelho... Voltando ao texto.
+Descrição de tabela 4.6... Tabela com durações-alvo para competições do limiar aeróbico... Voltando ao texto.
+
+Com um dispositivo GPS ou um acelerômetro, este mesmo procedimento pode servir para treinamentos com sessões do limiar aeróbico baseados no ritmo. Você só precisa substituir a potência pelo ritmo no procedimento anterior e usar a tabela 4.6 para determinar a duração-alvo de suas competições do limiar aeróbico.
+
+Não é possível determinar se as linhas são parelhas ou desparelhas na natação neste momento, já que não há forma de medir e analisar com precisão o ritmo enquanto se nada. Eu acredito que na piscina os monitores de FC costumam sofrer interrupções na corrente de dados por causa da má transmissão e recepção que há na água, o que determina uma informação imprecisa da FC. Pode ser que em breve esse problema seja solucionado graças ao rápido crescimento da tecnologia digital.
+
+Embora você não tenha um medidor de potência, nem um GPS, nem um acelerômetro, você também pode fazer treinamentos de corrida e ciclismo do limiar aeróbico usando um monitor de FC confiável. Você terá que tomar decisões sobre sua condição física na resistência aeróbica baseando-se estritamente na percepção do esforço; com o tempo, o esforço a uma FC do limiar aeróbico se tornará mais fácil para você.
+
+## FORMA, CONDIÇÃO FÍSICA E FADIGA
+
+Embora a exposição anterior sobre periodização pareça muito científica, o treinamento baseado na periodização é em grande parte um ato de fé. Você tem que confiar que, organizando seus treinamentos de certo modo, alcançará a máxima preparação para o dia da competição. No caminho, é possível tirar “instantâneos” de sua condição física a cada quatro semanas, ou algo assim, fazendo testes no campo. No entanto, como as mudanças fisiológicas costumam ser bastante pequenas, da ordem de 1%, variáveis como o clima, o aquecimento ou até um par de xícaras de café podem afetar facilmente os resultados. Assim, você terá que confiar novamente em seu instinto para saber se sua condição física está melhor do que algumas semanas atrás.
+
+Como dissemos, para quem treina com medidores de potência, a situação muda no treinamento de ciclismo. Com o novo *software* desenhado por Hunter Allen e Andrew Coggan, é possível fazer gráficos e controlar as mudanças diárias em sua preparação para a competição.
+
+Descrição de figura 4.6... Gráfico mostrando a progressão da fadiga, condição física e forma... Voltando ao texto.
+
+Uma das características mais úteis desse *software* é seu gráfico de controle do desempenho, que permite acompanhar a periodização e o progresso em relação aos objetivos da competição. A figura 4.6 se baseia em um exemplo de gráfico no início da temporada de um dos atletas que eu treino. É um bom exemplo da direção que a tecnologia do treinamento está tomando. Se você leva a sério seu desempenho em competição, talvez queira baixar este *software*, já que ele permitirá que você acompanhe de perto seu progresso. Quando você sabe exatamente como seu treinamento progride, pode responder rapidamente quando for necessário fazer pequenas mudanças na periodização para seguir o caminho em direção aos seus objetivos.
+
+Há três aspectos do treinamento representados nas linhas deste gráfico. Todos derivam de fórmulas longas e complicadas determinadas por certas variáveis baseadas na potência. São a “potência normalizada”, o “fator de intensidade” e a “marca de tensão do treinamento”, e refletem a intensidade, a duração e a frequência de seus treinamentos de ciclismo.
+
+A linha cinza do gráfico representa a fadiga. Ela se aproxima bastante do que você descreveria subjetivamente após alguns dias de treinamento duro. Observe os picos e os vales. Estes indicam a alternância dos dias de treinamentos duros e suaves. Os picos mostram o aumento da tensão do treinamento por causa de sessões de ciclismo longas, de alta intensidade e/ou frequentes. Os vales representam sessões curtas e suaves ou dias de descanso.
+
+A linha azul escura é a linha da condição física. Quando esta linha sobe, a condição física melhora. Observe que não é uma linha reta. A condição física nunca é estática; está sempre mudando, tanto positiva quanto negativamente. Além disso, a condição física só aumenta em resposta aos incrementos de fadiga. A condição física e a fadiga andam de mãos dadas. Isso faz sentido, já que estar fatigado significa que se treinou duro, e ter treinado duro produz uma melhor condição física. Embora seja necessário deixar alguns dias de descanso extenso a cada três ou quatro semanas para evitar o *overtraining* e o *burnout*, é preciso ter cuidado para não fazer pausas muito longas, ou se poderia perder uma parte importante da condição física. O *software* permitirá que você controle essas mudanças. É difícil equilibrar o descanso e a tensão quando se trata da condição física.
+
+A linha azul clara representa a forma, que também poderia ser chamada de preparação para a competição. Este uso da palavra “forma” provém de uma corrida de cavalos britânica do final do século XIX, quando os apostadores revisavam uma folha dos resultados prévios, *form*, dos cavalos que participavam da corrida. Dizia-se que o cavalo estava “*on form*” quando corria bem.
+
+A forma aumenta quando se abandona um treinamento duro para descansar mais. Diminui quando se treina com frequência em alta intensidade ou com sessões longas. Na parte esquerda do gráfico, você verá um zero no centro da escala. Quando a linha azul clara está acima deste ponto, o desportista está “em forma”.
+
+Agora, vamos dar uma olhada na periodização do início da temporada de um dos meus desportistas para ver como funcionou. Ao longo da curva da condição física, indiquei seus períodos de início da temporada: preparação, base, desenvolvimento, pico e competição (marcada com um círculo). O segundo período de desenvolvimento que vem depois da competição é o começo da volta ao treinamento duro para se preparar para a próxima competição prioritária de seu calendário.
+
+Como dissemos antes, o período de preparação é o que coincide com a volta do desportista ao treinamento após uma pausa no final da temporada anterior. Neste caso, entre dezembro e o início de janeiro. Ele havia planejado umas férias em família para as últimas três semanas deste período e não disporia de bicicleta. Neste caso, como não iria treinar com a bicicleta, você poderá observar a queda constante tanto da fadiga quanto da condição física. Acompanhando essa queda, aparece um aumento da forma. Ele estava realmente descansado, pelo menos em relação ao ciclismo, mas, evidentemente, sua condição física no ciclismo começou a cair rapidamente.
+
+No período base, ele voltou a treinar de forma constante e regular. Passou um tempo treinando em ambiente interno para trabalhar a resistência aeróbica, a força muscular e a velocidade de pedalada. O aumento constante da fadiga e da condição física, com uma queda da forma, indicam que o treinamento estava indo como esperado.
+
+Durante o primeiro período de desenvolvimento, comecei a aumentar a intensidade de seu treinamento com sessões de ciclismo para a resistência muscular compostas principalmente de treinos intervalados e segmentos de ritmo, enquanto mantinha suas três capacidades da condição física, resistência, força e velocidade, estabelecidas no período base. Tanto a fadiga quanto a condição física aumentaram em um ritmo maior e a forma caiu para um ponto baixo do início da temporada por causa desse aumento da carga do treinamento. Fiz leves ajustes na tensão e no descanso ao longo do caminho à medida que o gráfico me mostrava como ele respondia ao treinamento.
+
+No breve período de pico, ele fez um par de treinamentos duros com muito descanso entre eles. Observe como a fadiga caiu consideravelmente, enquanto a condição física diminuiu apenas ligeiramente. A mudança mais importante que se observa aqui é o rápido aumento da forma, com uma subida acima da linha horizontal zero mencionada anteriormente. Em sua primeira competição, ele não só gozava de um alto nível em sua condição física, mas também estava descansado. Isso ficou evidente em sua sensação de estar preparado no dia da competição e em seu desempenho na competição. Ele estava *em forma*.
+
+Depois desta primeira competição da temporada, ele tirou umas férias de alguns dias para fazer mountain bike e retomou seu duro treinamento na volta. Como você pode observar no lado direito, ele estava indo bem para alcançar o segundo pico da temporada, o que lhe trouxe resultados ainda melhores.
+
+## TREINAMENTO DE ALTA INTENSIDADE NO MUNDO REAL
+
+No caminho para a boa condição física, normalmente é preciso escolher entre uma das duas rotas. Os triatletas e duatletas profissionais costumam treinar de 25 a 30 horas ou mais por semana. O inconveniente deste treinamento é o risco de se lesionar ou o *burnout* que leva ao *overtraining*. Para lidar com este problema, quem se dedica ao triatlo como profissão costuma treinar em blocos de tempo superiores a semanas de sete dias. As “semanas” de nove ou dez dias lhes permitem ter espaço para seus treinamentos e recuperações.
+
+Para um desportista com um trabalho em tempo integral, uma família, um lar para manter e milhares de responsabilidades mais, este volume e estas manipulações do calendário são impossíveis. Um calendário de alta intensidade com semanas de sete dias sim o é, mas não fica isento de riscos, já que o *overtraining* é igualmente provável, ou talvez mais, quando os treinamentos anaeróbicos regem a rotina de treinamento em um período de tempo tão curto. Existe uma quantidade limitada de sessões de grande esforço que um desportista pode completar em uma semana sem “quebrar” no final.
+
+Para a maioria dos atletas de multiesportes, o treinamento de alta intensidade, quando realizado de forma inteligente, oferece a possibilidade de fazer grandes avanços na condição física. A maioria pode fazer apenas três ou quatro desses esforços para melhorar por semana; muitos podem chegar ao *overtraining*, sofrer lesões ou doenças ou esgotar-se. A informação mais importante que você pode aprender sobre si mesmo como triatleta sério é quantas sessões para avançar você pode fazer em uma semana e quanto tempo de recuperação você precisa depois. Quando você tiver descoberto isso, poderá programar uma semana de treinamento em um piscar de olhos.

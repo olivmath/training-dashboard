@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { RUNS, BIKES, GLOSSARY } from './data/dashboardData';
+import { TrainingPlan } from './components/TrainingPlan';
+import { BikePlan } from './components/BikePlan';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -55,34 +57,42 @@ const App: React.FC = () => {
     return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
   };
 
-  const chartOptions = (extra = {}) => ({
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        backgroundColor: getVar('--surface'),
-        borderColor: getVar('--border'),
-        borderWidth: 1,
-        titleColor: getVar('--text'),
-        bodyColor: getVar('--muted'),
-        titleFont: { family: 'Inter', size: 12 },
-        bodyFont: { family: 'Inter', size: 11 },
-        padding: 10,
-      }
-    },
-    scales: {
-      x: {
-        grid: { color: getVar('--border') },
-        ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, maxTicksLimit: 10 }
+  const baseTooltip = {
+    backgroundColor: getVar('--surface'),
+    borderColor: getVar('--border'),
+    borderWidth: 1,
+    titleColor: getVar('--text'),
+    bodyColor: getVar('--muted'),
+    titleFont: { family: 'Inter', size: 12 },
+    bodyFont: { family: 'Inter', size: 11 },
+    padding: 10,
+  };
+
+  const chartOptions = (extra: Record<string, any> = {}) => {
+    const { plugins: extraPlugins, scales: extraScales, ...restExtra } = extra;
+    return {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { ...baseTooltip, ...extraPlugins?.tooltip },
+        ...extraPlugins,
       },
-      y: {
-        grid: { color: getVar('--border') },
-        ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } }
-      }
-    },
-    ...extra
-  });
+      scales: {
+        x: {
+          grid: { color: getVar('--border') },
+          ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, maxTicksLimit: 10 },
+          ...extraScales?.x,
+        },
+        y: {
+          grid: { color: getVar('--border') },
+          ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 } },
+          ...extraScales?.y,
+        },
+      },
+      ...restExtra,
+    };
+  };
 
   // Pace Chart Data
   const paceRuns = RUNS.filter(r => r.pace && r.pace < 12 && r.dist_km >= 1);
@@ -231,6 +241,136 @@ const App: React.FC = () => {
             </section>
 
             <section>
+              <div className="section-label">Plano de treino · 8 semanas para quebrar 5:00/km</div>
+
+              <div className="legend" style={{ marginBottom: '20px' }}>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--subtle)' }}></div>fácil</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--accent2)' }}></div>tempo</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--accent)' }}></div>intervalado</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--blue)' }}></div>longo</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: '#eab308' }}></div>prova</div>
+              </div>
+
+              <TrainingPlan />
+
+              <div className="plan-grid" style={{ display: 'none' }}>
+                {[
+                  { id: 'S1', focus: 'Base aeróbica', now: true, sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min · 6:30/km' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: 'mobilidade' },
+                    { day: 'Qua', type: 'easy', name: 'Fácil + Strides', detail: '25 min + 4×100 m aceleração' },
+                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '6 km · 6:45/km' }
+                  ]},
+                  { id: 'S2', focus: 'Ativação de ritmo', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min · 6:20/km' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'tempo', name: 'Tempo curto', detail: '2 km fácil + 2×1 km a 5:40 + 2 km fácil' },
+                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '7 km · ritmo fácil' }
+                  ]},
+                  { id: 'S3', focus: 'Intro intervalos', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'intv', name: 'Tiros 400 m', detail: 'WU + 4×400 m a 4:50 + 2 min rec + CD' },
+                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '8 km · 6:30/km' }
+                  ]},
+                  { id: 'S4', focus: 'Consolidação', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'tempo', name: 'Tempo 3 km', detail: 'WU + 3 km contínuo a 5:30 + CD' },
+                    { day: 'Qui', type: 'easy', name: 'Descanso ativo', detail: '20 min fácil ou bike' },
+                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '9 km · 6:20/km' }
+                  ]},
+                  { id: 'S5', focus: 'Carga + velocidade', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '35 min' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'intv', name: 'Tiros 800 m', detail: 'WU + 4×800 m a 5:10 + 90 s rec + CD' },
+                    { day: 'Qui', type: 'easy', name: 'Regenerativo', detail: '20 min a 7:00/km' },
+                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '10 km · inclui 3 km a 5:50' }
+                  ]},
+                  { id: 'S6', focus: 'Pico de intensidade', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'intv', name: 'Pirâmide', detail: '400+800+1200+800+400 m · 4:50–5:10/km' },
+                    { day: 'Qui', type: 'easy', name: 'Fácil', detail: '25 min' },
+                    { day: 'Sáb', type: 'tempo', name: 'Tempo 4 km', detail: 'WU + 4 km a 5:20 + CD' }
+                  ]},
+                  { id: 'S7', focus: 'Afinamento', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '25 min · destravar pernas' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'intv', name: 'Tiros curtos', detail: '6×400 m a 4:40 · 2 min rec' },
+                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Sáb', type: 'easy', name: 'Fácil + Strides', detail: '20 min + 6×100 m sprint' }
+                  ]},
+                  { id: 'S8', focus: 'Teste de velocidade', sessions: [
+                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '20 min · pernas descansadas' },
+                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Qua', type: 'easy', name: 'Ativação', detail: '15 min + 4 strides' },
+                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
+                    { day: 'Sáb', type: 'race', name: 'TIME TRIAL 5 km', detail: 'Meta: sub-4:55/km · saia a 5:10 nos primeiros 2 km' }
+                  ]}
+                ].map((week, i) => (
+                  <div key={i} className={`week-col ${week.now ? 'now' : ''}`}>
+                    <div className="week-head">{week.id}</div>
+                    <div className="week-focus">{week.focus}</div>
+                    {week.sessions.map((sesh, j) => (
+                      <div key={j} className={`sesh ${sesh.type}`}>
+                        <div className="sesh-day">{sesh.day}</div>
+                        <div className="sesh-name">{sesh.name}</div>
+                        <div className="sesh-detail">{sesh.detail}</div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+
+              <div className="zones-grid">
+                <div className="zones-card">
+                  <h4>Zonas de pace de treino</h4>
+                  <div className="zone-row">
+                    <span>Recuperação / Fácil</span>
+                    <span className="zone-pace" style={{ color: 'var(--muted)' }}>6:30 – 7:00</span>
+                    <span className="zone-desc">80% dos treinos</span>
+                  </div>
+                  <div className="zone-row">
+                    <span>Tempo / Limiar</span>
+                    <span className="zone-pace" style={{ color: 'var(--accent2)' }}>5:15 – 5:35</span>
+                    <span className="zone-desc">10–15 min contínuos</span>
+                  </div>
+                  <div className="zone-row">
+                    <span>Intervalado / VO2</span>
+                    <span className="zone-pace" style={{ color: 'var(--accent)' }}>4:40 – 5:00</span>
+                    <span className="zone-desc">400–1200 m repetições</span>
+                  </div>
+                  <div className="zone-row">
+                    <span>Prova 5 km</span>
+                    <span className="zone-pace" style={{ color: '#eab308' }}>4:55 – 5:05</span>
+                    <span className="zone-desc">meta semana 8</span>
+                  </div>
+                </div>
+                <div className="zones-card">
+                  <h4>Dicas baseadas nos seus dados</h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    <div className="insight-card" style={{ padding: '10px 12px' }}>
+                      <div className="insight-icon g" style={{ width: '24px', height: '24px', fontSize: '11px', borderRadius: '5px' }}>1</div>
+                      <div className="insight-text"><b>Cadência</b> — passada de {avgStride.toFixed(2)} m sugere ~165 spm. Aumente para 170–175 spm com playlist nesse BPM.</div>
+                    </div>
+                    <div className="insight-card" style={{ padding: '10px 12px' }}>
+                      <div className="insight-icon g" style={{ width: '24px', height: '24px', fontSize: '11px', borderRadius: '5px' }}>2</div>
+                      <div className="insight-text"><b>Consistência &gt; intensidade</b> — 3 vezes por semana sem gaps vale mais do que treinos duros esporádicos.</div>
+                    </div>
+                    <div className="insight-card" style={{ padding: '10px 12px' }}>
+                      <div className="insight-icon g" style={{ width: '24px', height: '24px', fontSize: '11px', borderRadius: '5px' }}>3</div>
+                      <div className="insight-text"><b>GCT {Math.round(avgGCT)} ms</b> — pouse o pé embaixo do quadril, não à frente. Drills de skipping e A-skip corrigem isso.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
               <div className="section-label">Desempenho ao longo do tempo</div>
               <div className="charts-grid">
                 <div className="chart-card full">
@@ -242,22 +382,21 @@ const App: React.FC = () => {
                   <div className="chart-wrap tall">
                     <Line data={paceData} options={chartOptions({
                       scales: {
-                        x: { grid: { color: getVar('--border') }, ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, maxTicksLimit: 12 } },
+                        x: { ticks: { maxTicksLimit: 12 } },
                         y: {
                           reverse: true,
                           min: 4.5, max: 12,
-                          grid: { color: getVar('--border') },
-                          ticks: { color: getVar('--muted'), font: { family: 'Inter', size: 10 }, callback: (v: any) => fmtPace(v) }
-                        }
+                          ticks: { callback: (v: any) => fmtPace(v) },
+                        },
                       },
                       plugins: {
                         tooltip: {
                           callbacks: {
                             title: (ctx: any) => paceRuns[ctx[0].dataIndex]?.date + ' · ' + paceRuns[ctx[0].dataIndex]?.dist_km.toFixed(1) + ' km',
-                            label: (ctx: any) => 'Pace: ' + fmtPace(ctx.raw) + '/km'
-                          }
-                        }
-                      }
+                            label: (ctx: any) => 'Pace: ' + fmtPace(ctx.raw) + '/km',
+                          },
+                        },
+                      },
                     }) as any} />
                   </div>
                 </div>
@@ -392,134 +531,6 @@ const App: React.FC = () => {
                 </table>
               </div>
             </section>
-            
-            <section>
-              <div className="section-label">Plano de treino · 8 semanas para quebrar 5:00/km</div>
-
-              <div className="legend" style={{ marginBottom: '20px' }}>
-                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--subtle)' }}></div>fácil</div>
-                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--accent2)' }}></div>tempo</div>
-                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--accent)' }}></div>intervalado</div>
-                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--blue)' }}></div>longo</div>
-                <div className="legend-item"><div className="legend-swatch" style={{ background: '#eab308' }}></div>prova</div>
-              </div>
-
-              <div className="plan-grid">
-                {[
-                  { id: 'S1', focus: 'Base aeróbica', now: true, sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min · 6:30/km' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: 'mobilidade' },
-                    { day: 'Qua', type: 'easy', name: 'Fácil + Strides', detail: '25 min + 4×100 m aceleração' },
-                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '6 km · 6:45/km' }
-                  ]},
-                  { id: 'S2', focus: 'Ativação de ritmo', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min · 6:20/km' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'tempo', name: 'Tempo curto', detail: '2 km fácil + 2×1 km a 5:40 + 2 km fácil' },
-                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '7 km · ritmo fácil' }
-                  ]},
-                  { id: 'S3', focus: 'Intro intervalos', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'intv', name: 'Tiros 400 m', detail: 'WU + 4×400 m a 4:50 + 2 min rec + CD' },
-                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '8 km · 6:30/km' }
-                  ]},
-                  { id: 'S4', focus: 'Consolidação', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'tempo', name: 'Tempo 3 km', detail: 'WU + 3 km contínuo a 5:30 + CD' },
-                    { day: 'Qui', type: 'easy', name: 'Descanso ativo', detail: '20 min fácil ou bike' },
-                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '9 km · 6:20/km' }
-                  ]},
-                  { id: 'S5', focus: 'Carga + velocidade', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '35 min' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'intv', name: 'Tiros 800 m', detail: 'WU + 4×800 m a 5:10 + 90 s rec + CD' },
-                    { day: 'Qui', type: 'easy', name: 'Regenerativo', detail: '20 min a 7:00/km' },
-                    { day: 'Sáb', type: 'long', name: 'Longo', detail: '10 km · inclui 3 km a 5:50' }
-                  ]},
-                  { id: 'S6', focus: 'Pico de intensidade', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '30 min' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'intv', name: 'Pirâmide', detail: '400+800+1200+800+400 m · 4:50–5:10/km' },
-                    { day: 'Qui', type: 'easy', name: 'Fácil', detail: '25 min' },
-                    { day: 'Sáb', type: 'tempo', name: 'Tempo 4 km', detail: 'WU + 4 km a 5:20 + CD' }
-                  ]},
-                  { id: 'S7', focus: 'Afinamento', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '25 min · destravar pernas' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'intv', name: 'Tiros curtos', detail: '6×400 m a 4:40 · 2 min rec' },
-                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Sáb', type: 'easy', name: 'Fácil + Strides', detail: '20 min + 6×100 m sprint' }
-                  ]},
-                  { id: 'S8', focus: 'Teste de velocidade', sessions: [
-                    { day: 'Seg', type: 'easy', name: 'Fácil', detail: '20 min · pernas descansadas' },
-                    { day: 'Ter', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Qua', type: 'easy', name: 'Ativação', detail: '15 min + 4 strides' },
-                    { day: 'Qui', type: 'rest', name: 'Descanso', detail: '—' },
-                    { day: 'Sáb', type: 'race', name: 'TIME TRIAL 5 km', detail: 'Meta: sub-4:55/km · saia a 5:10 nos primeiros 2 km' }
-                  ]}
-                ].map((week, i) => (
-                  <div key={i} className={`week-col ${week.now ? 'now' : ''}`}>
-                    <div className="week-head">{week.id}</div>
-                    <div className="week-focus">{week.focus}</div>
-                    {week.sessions.map((sesh, j) => (
-                      <div key={j} className={`sesh ${sesh.type}`}>
-                        <div className="sesh-day">{sesh.day}</div>
-                        <div className="sesh-name">{sesh.name}</div>
-                        <div className="sesh-detail">{sesh.detail}</div>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-
-              <div className="zones-grid">
-                <div className="zones-card">
-                  <h4>Zonas de pace de treino</h4>
-                  <div className="zone-row">
-                    <span>Recuperação / Fácil</span>
-                    <span className="zone-pace" style={{ color: 'var(--muted)' }}>6:30 – 7:00</span>
-                    <span className="zone-desc">80% dos treinos</span>
-                  </div>
-                  <div className="zone-row">
-                    <span>Tempo / Limiar</span>
-                    <span className="zone-pace" style={{ color: 'var(--accent2)' }}>5:15 – 5:35</span>
-                    <span className="zone-desc">10–15 min contínuos</span>
-                  </div>
-                  <div className="zone-row">
-                    <span>Intervalado / VO2</span>
-                    <span className="zone-pace" style={{ color: 'var(--accent)' }}>4:40 – 5:00</span>
-                    <span className="zone-desc">400–1200 m repetições</span>
-                  </div>
-                  <div className="zone-row">
-                    <span>Prova 5 km</span>
-                    <span className="zone-pace" style={{ color: '#eab308' }}>4:55 – 5:05</span>
-                    <span className="zone-desc">meta semana 8</span>
-                  </div>
-                </div>
-                <div className="zones-card">
-                  <h4>Dicas baseadas nos seus dados</h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    <div className="insight-card" style={{ padding: '10px 12px' }}>
-                      <div className="insight-icon g" style={{ width: '24px', height: '24px', fontSize: '11px', borderRadius: '5px' }}>1</div>
-                      <div className="insight-text"><b>Cadência</b> — passada de {avgStride.toFixed(2)} m sugere ~165 spm. Aumente para 170–175 spm com playlist nesse BPM.</div>
-                    </div>
-                    <div className="insight-card" style={{ padding: '10px 12px' }}>
-                      <div className="insight-icon g" style={{ width: '24px', height: '24px', fontSize: '11px', borderRadius: '5px' }}>2</div>
-                      <div className="insight-text"><b>Consistência &gt; intensidade</b> — 3 vezes por semana sem gaps vale mais do que treinos duros esporádicos.</div>
-                    </div>
-                    <div className="insight-card" style={{ padding: '10px 12px' }}>
-                      <div className="insight-icon g" style={{ width: '24px', height: '24px', fontSize: '11px', borderRadius: '5px' }}>3</div>
-                      <div className="insight-text"><b>GCT {Math.round(avgGCT)} ms</b> — pouse o pé embaixo do quadril, não à frente. Drills de skipping e A-skip corrigem isso.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
         )}
 
@@ -559,6 +570,20 @@ const App: React.FC = () => {
                   <div className="kpi-sub">dez/2024 → mai/2026</div>
                 </div>
               </div>
+            </section>
+
+            <section>
+              <div className="section-label">Plano de treino · bike · 8 semanas para ≥ 22 km/h</div>
+
+              <div className="legend" style={{ marginBottom: '20px' }}>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--subtle)' }}></div>fácil</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--accent2)' }}></div>tempo</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--accent)' }}></div>intervalado</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: 'var(--blue)' }}></div>longo</div>
+                <div className="legend-item"><div className="legend-swatch" style={{ background: '#eab308' }}></div>prova</div>
+              </div>
+
+              <BikePlan />
             </section>
 
             <section>
@@ -660,6 +685,36 @@ const App: React.FC = () => {
                       }) as any}
                     />
                   </div>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <div className="section-label">Insights · bike</div>
+              <div className="insights-grid">
+                <div className="insight-card">
+                  <div className="insight-icon g">↑</div>
+                  <div className="insight-text">Melhor velocidade: <b>{Math.max(...BIKES.map(b => b.speed_kmh)).toFixed(1)} km/h</b> em {BIKES.find(b => b.speed_kmh === Math.max(...BIKES.map(b => b.speed_kmh)))?.date.split('-').reverse().join('/')}. Velocidade média geral de {(BIKES.reduce((a,b)=>a+b.speed_kmh,0)/BIKES.length).toFixed(1)} km/h — gap de <b>~{(Math.max(...BIKES.map(b=>b.speed_kmh)) - BIKES.reduce((a,b)=>a+b.speed_kmh,0)/BIKES.length).toFixed(1)} km/h</b> entre pico e média mostra potencial ainda não regularizado.</div>
+                </div>
+                <div className="insight-card">
+                  <div className="insight-icon o">!</div>
+                  <div className="insight-text">Maioria das pedaladas é <em>curta</em> — {BIKES.filter(b=>b.dist_km<8).length} de {BIKES.length} rides abaixo de 8 km. Para ganho aeróbico real, o livro recomenda sessões ≥ 45 min contínuos. Rides curtos demais não atingem a janela de queima de gordura.</div>
+                </div>
+                <div className="insight-card">
+                  <div className="insight-icon g">✓</div>
+                  <div className="insight-text">Maior pedalada: <b>{Math.max(...BIKES.map(b=>b.dist_km)).toFixed(1)} km</b> em {BIKES.find(b=>b.dist_km===Math.max(...BIKES.map(b=>b.dist_km)))?.date.split('-').reverse().join('/')}. Essa distância confirma base para começar o plano de 8 semanas — o longo de S3 (~12 km) está ao alcance.</div>
+                </div>
+                <div className="insight-card">
+                  <div className="insight-icon b">i</div>
+                  <div className="insight-text">Apple Watch não registra <b>cadência de pedal</b> (rpm). Sem esse dado, é impossível saber se você pedala em 70 rpm (força excessiva) ou 90 rpm (eficiência). Considere um sensor de cadência Bluetooth (~R$80) — o maior retorno por custo no ciclismo.</div>
+                </div>
+                <div className="insight-card">
+                  <div className="insight-icon o">→</div>
+                  <div className="insight-text">Nenhuma sessão de <em>intervalo</em> nos dados — todas as pedaladas parecem ser de ritmo constante. Sem estímulo Z4, o teto de velocidade não sobe. Os Intervalos Z4 do plano (S5–S6) são o principal gatilho de melhora de performance.</div>
+                </div>
+                <div className="insight-card">
+                  <div className="insight-icon g">↑</div>
+                  <div className="insight-text">FC média de <b>{Math.round(BIKES.filter(b=>b.hr_avg).reduce((a,b)=>a+b.hr_avg!,0)/BIKES.filter(b=>b.hr_avg).length)} bpm</b> nas pedaladas — zona aeróbica adequada. Boa base cardiovascular para suportar o aumento de volume do plano sem overreaching.</div>
                 </div>
               </div>
             </section>

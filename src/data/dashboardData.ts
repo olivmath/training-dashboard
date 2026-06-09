@@ -95,4 +95,52 @@ export const GLOSSARY: GlossaryItem[] = [
   { term: "Média Móvel", unit: "gráfico", emoji: "📈",
     def: "Linha no gráfico que suaviza variações calculando a média das últimas N corridas. Mostra a tendência real, ignorando outliers.",
     example: "A linha laranja no gráfico de pace = média das últimas 7 corridas." },
+
+  { term: "Overtraining", unit: "síndrome", emoji: "🚨",
+    def: "Estado de fadiga crônica causado por treinar mais do que o corpo consegue recuperar. Sintomas: queda de desempenho, irritabilidade, sono ruim e FC em repouso elevada. A prevenção é mais fácil que a cura — pode levar semanas para sair.",
+    example: "Seus dois gaps longos (set→out/25 e nov/25→jan/26) podem ter sido resposta ao acúmulo de carga sem recuperação adequada." },
+
+  { term: "Semana de Recuperação (Deload)", unit: "semana a cada 3–4", emoji: "🔄",
+    def: "Semana com volume reduzido em ~30% e intensidade baixa. Permite ao corpo absorver o estímulo das semanas anteriores. Não é fraqueza — é parte essencial da progressão. Atletas que pulam o deload regridem mais.",
+    example: "No plano revisado: Semana 4 é exclusivamente Z1–Z2 para preparar o corpo para a fase de intervalos." },
+
+  { term: "Periodização", unit: "estrutura de treinamento", emoji: "📅",
+    def: "Organização do treinamento em fases com objetivos distintos: Base (aeróbico) → Limiar → Intervalos → Afinamento. Cada fase constrói sobre a anterior. Treinar todas as qualidades ao mesmo tempo impede o desenvolvimento máximo de qualquer uma.",
+    example: "Seu plano de 8 semanas segue: Base (S1–S2) → Limiar (S3) → Recuperação (S4) → Intervalos (S5–S6) → Pico (S7) → Taper (S8)." },
+
+  { term: "Limiar Anaeróbico (LT)", unit: "bpm / pace", emoji: "🔥",
+    def: "Intensidade máxima que você consegue sustentar por ~40–60 min sem acumular lactato. Acima do limiar o ritmo cai bruscamente. Treinos de tempo run elevam esse limiar — o principal fator de melhora de pace em distâncias de 5–10km.",
+    example: "Seu limiar estimado está em torno de 5:20–5:35/km (~162–170 bpm). O treino de Tempo 4km trabalha exatamente esse ponto." },
+
+  { term: "Zona 2 (Z2)", unit: "aeróbico base", emoji: "🟢",
+    def: "A zona mais importante para atletas de resistência. 60–70% da FC máx (~115–134 bpm para você). Conversacional — frases completas sem dificuldade. Desenvolve mitocôndrias, queima de gordura e base aeróbica. Deve ser 80% de todo o treino.",
+    example: "A maioria das suas corridas já está em Z2 (~149 bpm médio). O objetivo é manter isso nas corridas fáceis e longas." },
+
+  { term: "Taper (Afinamento)", unit: "fase pré-prova", emoji: "📉",
+    def: "Redução progressiva de volume nas semanas antes da competição. Mantém a intensidade mas corta o volume em 40–60%. O objetivo é chegar descansado sem perder a condição física. Muitos atletas erram treinando muito na semana da prova.",
+    example: "Semana 8 do plano: volume baixo, algumas acelerações curtas para manter o ritmo das pernas, sem treinos pesados depois de quarta-feira." },
+
+  { term: "Stride", unit: "aceleração controlada", emoji: "💨",
+    def: "Corrida progressiva de ~80–100m chegando a ~90–95% do esforço máximo, com desaceleração suave no final. Dura ~20–25s. Recuperação completa entre eles (60–90s). Não cansam o corpo mas 'educam' o sistema nervoso a recrutar fibras rápidas.",
+    example: "No plano: 4–6 strides ao final de corridas fáceis nas semanas de base, antes de introduzir qualquer intervalo formal." },
+
+  { term: "Cadência (Bike)", unit: "rpm (rotações/min)", emoji: "🚴",
+    def: "Quantas vezes por minuto você completa uma pedalada. Cadência alta (85–95 rpm) poupa os músculos e usa mais o sistema cardiovascular. Cadência baixa (<75 rpm) força mais as pernas. Iniciantes tendem a pedalar lento — aumentar a cadência melhora eficiência.",
+    example: "Seu Apple Watch não registra cadência de bike. Para treinar, pedale sentindo que 'gira leve' mesmo em velocidade — sinal de cadência adequada." },
+
+  { term: "Velocidade Média vs. Normalizada", unit: "km/h", emoji: "🚵",
+    def: "Velocidade média inclui paradas e subidas. Velocidade normalizada (NP) pondera as variações de esforço — mais útil para comparar rides com perfis diferentes. Em terreno plano os dois valores ficam próximos.",
+    example: "Sua pedalada mais rápida foi 24,5 km/h (jan/26). Sua maior (15,4 km) foi a 12,2 km/h — possivelmente com mais elevação ou vento." },
+
+  { term: "Consistência", unit: "princípio de treinamento", emoji: "📆",
+    def: "O fator mais subestimado no esporte de resistência. Treinar regularmente por meses supera qualquer treino isolado muito intenso. Gaps de mais de 2 semanas custam adaptações que levam mais tempo para reconstruir do que o tempo parado.",
+    example: "Você teve 2 gaps longos no período: 6 semanas (set→out/25) e 7 semanas (nov/25→jan/26). Cada um custou semanas de base aeróbica reconstruída." },
+
+  { term: "RPE (Esforço Percebido)", unit: "escala 1–10", emoji: "🧠",
+    def: "Rate of Perceived Exertion — o quanto você sente que está se esforçando. Escala de 1 (passeio) a 10 (máximo absoluto). Útil quando não tem FC ou pace disponível. Z2 = RPE 4–5, Tempo = RPE 7, Intervalos = RPE 8–9.",
+    example: "Corrida fácil: você deve conseguir falar frases completas (RPE 4–5). Se estiver acima disso, está rápido demais para o treino aeróbico base." },
+
+  { term: "Recuperação Ativa", unit: "sessão leve", emoji: "🧘",
+    def: "Atividade de baixíssima intensidade (Z1) usada nos dias de descanso para acelerar a recuperação sem adicionar carga. Aumenta o fluxo sanguíneo e remove resíduos metabólicos dos músculos. Exemplos: caminhada, mobilidade, bike muito leve, natação suave.",
+    example: "Dias de 'descanso' no plano com bike ou corrida de 20 min a 7:00/km são recuperação ativa — não deixe virar treino." },
 ];

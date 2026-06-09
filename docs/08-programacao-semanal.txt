@@ -1,0 +1,195 @@
+Capítulo 8. Programação para uma semana.
+
+Com muita frequência, os atletas, especialmente os jovens, identificam os avanços no desempenho unicamente com o treinamento físico duro. Na verdade, isso é só parte do espetáculo. Rod Cedaro, fisiologista do exercício.
+
+Se você tirar algo deste livro, espero que seja a ideia de que o treinamento precisa fazer sentido e ser preciso para cumprir suas necessidades únicas. Treinar de forma aleatória traz resultados no começo, mas, para alcançar o nível mais alto da sua condição física em competição, é preciso programar as sessões de treino com cuidado. Antes de começar qualquer sessão, da mais simples à mais dura, você precisa ser capaz de responder a uma pergunta simples: qual é o objetivo deste treinamento? Se não responder, é provável que não progrida muito nessa sessão de natação, ciclismo ou corrida. A resposta tem relação com seus propósitos, objetivos, pontos fortes e limitadores. Pode ser que você queira melhorar algum aspecto específico da condição física e mental, ou apenas mantê-lo.
+
+Outra possibilidade, que muitos atletas deixam de lado, é que o fim do treinamento programado também pode ser estimular a recuperação ativa. Outro fim ainda envolve fazer provas e simular a competição. Decidir de antemão que benefícios a sessão vai trazer, e revisar os objetivos antes de começar, ajuda você a tirar o máximo de cada treino. Isso é crucial para alcançar o pico nos momentos certos da temporada. Esse princípio se apoia, claro, em ter primeiro um plano bem pensado.
+
+O objetivo deste capítulo é explicar os princípios de um calendário de treinos e mostrar como aplicá-los. No capítulo 7 você completou o Programa de treinamento anual. Quando terminar este capítulo, vai ter determinado os treinos-chave para cada semana da temporada e entendido como eles se combinam dentro de um calendário semanal. Como sugeri antes, complete o Programa de treinamento anual a lápis ou em formato eletrônico no TrainingPeaks.com, já que normalmente é preciso fazer mudanças ao longo do ano. Revise seu Programa de treinamento anual a cada semana, junto com seu diário de treinos, enquanto prepara o trabalho da semana seguinte. Mais adiante, no capítulo 15, você vai aprender a combinar o diário com o Programa de treinamento anual para montar um calendário diário e semanal completo.
+
+Composição do desenho da temporada.
+
+Passo 7. Programar treinos semanalmente.
+
+No capítulo 7 foram apresentados os seis primeiros passos do desenho da temporada com o Programa de treinamento anual. A esta altura, você já deve ter completado as partes do programa relacionadas a horas anuais, objetivos da temporada, propósitos de treino, competições, prioridades, períodos e horas. Agora vamos ao que interessa: as categorias dos treinos.
+
+No canto superior direito do Programa de treinamento anual há os blocos de natação, ciclismo e corrida, e abaixo de cada um, seis colunas para as capacidades tratadas em capítulos anteriores: resistência, força, velocidade, resistência muscular, resistência anaeróbica e potência. Há também uma coluna para as provas. Neste passo você vai atribuir sessões dessas categorias a cada semana da temporada. Depois, quando estiver pronto para começar uma semana específica, você define os treinos concretos com o maior benefício para cada capacidade. Os apêndices B, C, D e E mostram treinos para cada uma das capacidades. Você pode escolher o adequado para cada dia. Essa lista de treinos não é, de longe, exaustiva. Há muitas outras possibilidades, e além disso dá para combinar elementos de vários treinos numa única sessão que trabalhe mais de uma capacidade.
+
+Pesos.
+
+Antes de seguir para natação, ciclismo e corrida, repare que há uma coluna à esquerda com o título "pesos". Nessa coluna você anota as fases do treinamento de força da temporada na sala de musculação. Alguns atletas de multiesporte negligenciam esse aspecto, principalmente quando a força é seu limitador. Os resultados mensuráveis costumam aparecer rápido com esse tipo de treino, sobretudo no ciclismo. Quem é novo no treino com pesos costuma se surpreender com o quanto se sente forte nas subidas na primavera depois de ter treinado com pesos no inverno.
+
+Os detalhes das cinco fases da força estão no capítulo 13, mas com pouca informação dá para preencher a coluna "pesos" com abreviações a lápis das diferentes fases. Vamos ver como determinar a duração de cada fase. Se ficar confuso, consulte o capítulo 9 para ver exemplos de programas anuais.
+
+Fase de adaptação anatômica, sigla AA. Se você não trabalhou força por pelo menos quatro semanas, inclua entre quatro e seis semanas de AA no início do seu ano de treinamento, de preferência durante o período de preparação no começo da temporada. Se faz menos de quatro semanas que você treinou com pesos, atribua entre duas e quatro semanas de AA no período de preparação.
+
+Fase de transição máxima, sigla TM. Programe duas semanas de TM entre as fases de AA e FM. O objetivo é preparar o corpo para cargas mais duras que as da fase de FM.
+
+Fase de força máxima, sigla FM. Se a força, especialmente no ciclismo, é um limitador para você, programe treinos de FM para as próximas seis semanas. Caso contrário, programe só quatro semanas. Essa fase costuma funcionar melhor no período base 1 da temporada.
+
+Fase de manutenção da força, sigla MF. Atribua treinos de MF ao restante do período base. Nesse ponto do ano, quando começa o período de desenvolvimento 1, muitos atletas entre 20 e 30 e poucos anos costumam deixar de treinar com pesos. À maioria dos homens masters e a todas as mulheres, no entanto, recomenda-se manter os ganhos de força dos meses de inverno durante a maior parte do resto da temporada. Não programe treinos com pesos na semana de competições de prioridade A.
+
+Periodização das sessões de treinamento.
+
+As seções a seguir vão ajudar a completar as partes de natação, ciclismo e corrida do Programa de treinamento anual. Como as semanas de descanso e recuperação costumam ser negligenciadas, mas de certo modo são as partes mais importantes de todo o programa, começo por elas. Se não estiver claro como marcar o Programa, consulte os exemplos do capítulo 9. Mulheres, masters, iniciantes em multiesporte e atletas de elite devem ler as partes correspondentes do capítulo 14 antes de continuar.
+
+Semanas de DyR, descanso e recuperação.
+
+A quarta semana do período base e a quarta semana do período de desenvolvimento ficam reservadas para o descanso e a recuperação da fadiga acumulada nas três semanas anteriores. Se a fadiga não é descarregada, a condição física não progride muito. Você já incluiu parcialmente o DyR ao atribuir horas semanais reduzidas durante a quarta semana dos períodos base e de desenvolvimento, segundo a tabela 7.2. Agora vamos atribuir sessões a essas semanas de pouco volume.
+
+Para cada semana de DyR, marque um X nas colunas de resistência e velocidade em cada esporte. Nos períodos base e de desenvolvimento, marque um X na coluna de provas se não houver competição. Tirando uma eventual sessão de força, é tudo nessas semanas. A ideia é que você se recupere da tensão, se sinta descansado no fim da semana, mantenha a resistência, a velocidade e a força, e meça o seu progresso depois de descansar. Nos períodos de desenvolvimento e pico pode haver uma competição de prioridade B ou C no fim da semana servindo como prova. O capítulo 5 e os apêndices B, C e D apresentam provas que dá para fazer durante essas semanas.
+
+Quem se recupera rápido depois de várias semanas duras pode abrir exceção na programação de DyR. Em geral são atletas jovens, com experiência e ótima condição física. A capacidade de se recuperar rápido também tem a ver com dieta, estresse do estilo de vida e outros fatores. Se você perceber que em quatro ou seis dias da semana de DyR já está plenamente recuperado, volte a treinar mais duro antes da semana acabar. Isso vai significar que seus fins de semana de DyR ficam quase iguais aos demais. Os detalhes desta exceção aparecem em capítulos posteriores.
+
+Agora você está pronto para completar as categorias de treino das outras semanas do ano, as que não são DyR, indicando as capacidades em que vai trabalhar. Quando estiver pronto para escolher os treinos exatos de cada semana, consulte os apêndices B, C, D e E.
+
+Período de preparação.
+
+Marque X nas colunas de resistência e velocidade em cada semana do período de preparação para cada esporte. O treino de resistência nesse período se concentra na melhora das características de resistência do coração, sangue e pulmões, a que chamamos em conjunto sistema cardiorrespiratório. O treinamento cruzado é uma opção nesse período, especialmente quando o clima atrapalha as sessões de ciclismo e corrida. Mas como o multiesporte é diverso, natação, ciclismo e corrida podem continuar normalmente. Marque também um X em "provas" na primeira e na última semana do período de preparação.
+
+Base 1.
+
+De novo, marque resistência e velocidade em cada semana do período base 1. Nesse período os treinos de resistência ficam mais longos e o trabalho de velocidade aumenta. As condições do tempo costumam pesar muito no treino de ciclismo e corrida nessa fase. Mountain bike, esqui de fundo ou esqui de travessia com raquetes são ótimas alternativas quando o tempo atrapalha o trabalho na estrada. Um bom rolo de treino e uma esteira também são boas ferramentas para o período base quando não dá para treinar na rua.
+
+Base 2.
+
+Marque X em resistência, força, velocidade e resistência muscular em cada semana que não seja DyR do período base 2. Como você vai ver nos treinos propostos para esse período nos apêndices B, C e D, a resistência muscular é trabalhada em intensidades moderadas e o treino de força fica nas fases iniciais. Você já ganhou força na fase de FM recém-concluída. Agora o treino deve passar de geral para específico, criando força específica de natação, ciclismo e corrida. A duração das sessões de resistência continua aumentando.
+
+Base 3.
+
+Marque resistência, força, velocidade e resistência muscular em cada semana do período base 3 que não seja DyR. O volume de treino atinge o nível máximo nesse período. A intensidade também sobe um pouco com a maior condição de força e, talvez, intensidades mais altas no trabalho de resistência muscular.
+
+Desenvolvimento 1 e Desenvolvimento 2.
+
+Programe sessões de resistência e resistência muscular para as semanas que não sejam DyR dos períodos de desenvolvimento 1 e 2. Selecione também seu maior limitador em cada esporte e marque a coluna. Se não tem certeza de qual limitador programar, escolha força para ciclismo e corrida, e resistência anaeróbica para natação. Com algumas exceções, o treino de resistência anaeróbica nos outros esportes é fundamental para atletas que estão na ponta em distâncias sprint ou olímpica. É improvável que você marque potência, já que é fundamental para atletas de elite em provas com drafting admitido de sprint e em provas olímpicas. Se não selecionar potência nem resistência anaeróbica para um esporte, marque também velocidade nesse esporte. Nesse período dá para treinar duas ou mais capacidades numa só sessão, simulando a tensão da competição.
+
+As competições contam também como treinos. Uma prova sprint pode substituir uma sessão de resistência anaeróbica. Provas com subidas servem como treino de força, e provas olímpicas ou de meio-Ironman como treino de resistência muscular e resistência. É melhor dar prioridade C às provas do começo de temporada no desenvolvimento 1. Na semana de provas de prioridade B, programe treinos só para uma capacidade em cada esporte. Lembre que você está treinando para provas de prioridade C, então não precisa descansar muito antes delas. Programe cada período de desenvolvimento 1 e 2 no Programa anual do mesmo modo.
+
+Pico.
+
+Marque X em resistência e resistência muscular em cada esporte. Se a competição visada é de distância olímpica ou menor, marque também seu maior limitador para apenas um esporte por semana do período pico. Quando não tiver certeza do próximo grande limitador e for atleta rápido, selecione resistência anaeróbica na sua semana mais fraca. Selecione velocidade se não tem certeza e costuma ficar entre os últimos do grupo. Se não marcar resistência anaeróbica nem potência, marque também velocidade em todos os esportes. Se a competição é meio-Ironman ou Ironman, programe só velocidade junto com resistência e resistência muscular em cada esporte.
+
+As competições podem substituir as sessões de treino com os mesmos critérios do período de desenvolvimento. Provas de prioridade C no período pico são excelentes ajustes finos para as provas A seguintes, porque colocam você de novo em "modo de competição". É melhor distâncias mais curtas que a da prova A, mas não mais longas que a olímpica. Programe uma simulação na intensidade de competição a cada 72 ou 96 horas no pico. Lembre que os treinos de ciclismo e corrida na intensidade de competição se combinam em uma só sessão nos dias dessas simulações, junto com uma boa sessão de natação. Marque todos os períodos pico do mesmo modo.
+
+Competição.
+
+Em cada semana desse período, compita ou simule uma competição com o mesmo esforço, na forma de um brick, ou seja, uma sessão combinada de ciclismo e corrida com natação no esforço de competição, no mesmo dia, no fim da semana. Marque todos os períodos de competição do mesmo modo. Semanas de DyR com uma prova de prioridade B no fim podem ser tratadas como semanas de competição. Nessas semanas, as próprias competições funcionam como treino das outras capacidades.
+
+Transição.
+
+Não marque nada na semana de transição. Esse é um período desestruturado que serve para recarregar as baterias mentais e físicas. Mesmo assim, mantenha-se ativo, principalmente em esportes que você gosta, fora natação, ciclismo e corrida. Pode praticar esportes coletivos como futebol, basquete, vôlei ou hóquei, por exemplo, ou participar de atividades de resistência como esqui de fundo, trilha ou patins. Não fique jogado no sofá vendo TV, mas também não exagere no treino. Pare uns dias os três esportes específicos e descanse o máximo possível.
+
+Sessões-chave e de recuperação.
+
+Os únicos treinos que você programou até aqui são os que representam um desafio ou que servem para manter suas capacidades em competição. Os que representam algum desafio se chamam sessões-chave. A dificuldade de uma sessão-chave varia conforme o período. Uma sessão com muito tempo na zona 3, por exemplo, serve para trabalhar resistência muscular no período base. No período pico, no entanto, essa mesma sessão provavelmente não é mais um grande desafio. Do mesmo modo, uma sessão longa de resistência no base 1 pode te cobrar caro, mas mais à frente, quando a resistência já estiver consolidada, uma sessão assim não exige tanto.
+
+As sessões de recuperação que ficam entre as sessões de avanço não aparecem no Programa de treinamento anual, mas são parte fundamental de qualquer programa e devem ser incluídas com frequência. Os apêndices B, C e D trazem sugestões, e a próxima seção, sobre padrões semanais, explica como encaixá-las no calendário.
+
+Rotinas de treinamento semanais.
+
+Agora que seu Programa de treinamento anual está completo, com todas as semanas agrupadas em períodos, só falta decidir a rotina semanal. Em que dia fazer cada sessão e por quanto tempo. Não é tarefa simples. Você pode ter o melhor programa possível, mas, se não combinar as sessões de modo a permitir recuperação e adaptação, ele não vai servir para nada. O problema é misturar sessões curtas e longas, e de intensidade alta e baixa, em três esportes, além de programar outros treinos como pesos.
+
+O capítulo 15 oferece um diário semanal para registrar sessões e resultados de cada dia. Por enquanto, vamos pensar nos jeitos de definir a rotina de cada dia.
+
+Padrões.
+
+As figuras 8.1a a 8.1k oferecem um possível padrão para combinar volume diário e intensidade em cada semana dos períodos de treino, incluindo as semanas de DyR e de competição. São apenas exemplos, já que existem muitas variáveis individuais, como combinações de limitadores e quantidades distintas de tempo disponível, e não dá para um padrão único servir a todo mundo. Use as propostas para desenhar seus próprios padrões, e não como solução final.
+
+Nessas figuras, duração e intensidade aparecem como alta, média, baixa ou recuperação. O que para um atleta é grande volume pode ser pouco para outro, então esses níveis só fazem sentido para você. Os dias de recuperação podem ser ativos, com treino bem leve, ou passivos, sem treino, dependendo do seu nível. Iniciantes costumam tirar mais proveito de dias de descanso totalmente passivos.
+
+Programar treinos de avanço é um ato de equilíbrio. O objetivo é criar níveis adequados de tensão para favorecer a adaptação, de um lado, e permitir recuperação, de outro. É durante a recuperação que a adaptação à tensão acontece de verdade, e que vêm os ganhos fisiológicos desejados. Numa semana específica, há dois jeitos comuns de estruturar isso. Um é dividir os dias em duros e suaves. Em outras palavras, um dia de avanço seguido de um dia de recuperação. Outro padrão muito usado no triatlo é o treino em blocos, em que duas ou até três sessões de avanço ficam seguidas e depois vêm dias de recuperação e manutenção. O triatlo favorece o treino em blocos porque os três esportes trabalham grupos musculares diferentes em dias consecutivos. Uma corrida de avanço num dia, por exemplo, pode ser seguida de uma sessão de natação de avanço no dia seguinte. Muitos atletas acreditam conseguir fazer até duas sessões de avanço no mesmo dia em esportes diferentes, se uma, geralmente a segunda do dia, for menos intensa, como o treino de resistência muscular, ou se uma for de natação. As diferenças individuais na capacidade de recuperação ditam qual método usar e o quanto as sessões de avanço devem ficar espaçadas. A figura 8.1 mostra a abordagem dos blocos.
+
+As "opções de sessão" da figura 8.1 são códigos baseados nos apêndices B, C, D e E. Você pode querer criar outras sessões que se ajustem melhor às suas necessidades. Anote e atribua códigos. Esses códigos vão servir de abreviação quando você programar sessões no diário no começo da semana.
+
+Descrição das figuras 8.1a a 8.1k: cada figura mostra um exemplo de semana de treinamento para um período diferente. A figura 8.1a traz o exemplo da semana de preparação. A 8.1b, da semana do período base 1. A 8.1c, do base 2. A 8.1d, do base 3. A 8.1e, da semana de DyR no período base. A 8.1f, do desenvolvimento 1. A 8.1g, do desenvolvimento 2. A 8.1h, da semana de DyR no período de desenvolvimento. A 8.1i, do período pico. As 8.1j e 8.1k mostram semanas de competição, com a prova no sábado e no domingo, respectivamente. Em todas, o padrão é colocar sessões-chave de avanço em blocos, intercaladas com dias de recuperação ativa ou passiva, e usar o fim de semana para o treino mais longo ou para a competição. Para os códigos exatos de cada sessão e para a distribuição hora a hora, consulte as figuras 8.1a a 8.1k no livro físico. Voltando ao texto.
+
+Análise dos riscos.
+
+Como vimos no capítulo 5, todas as sessões de treino têm riscos e recompensas. Antes de começar a desenhar seu calendário diário, vale voltar atrás e reavaliar quanto risco você está disposto a assumir e consegue aguentar. Algumas sessões são de baixo risco, mas trazem pouco benefício para o tempo e a energia investidos. Outras são bastante arriscadas, mas podem render resultados enormes se você for inteligente e investir com cautela. Os riscos das sessões de avanço são overtraining, lesões, doenças e burnout. Quando um contratempo desses acontece, o atleta muito agressivo precisa voltar ao treino básico, de baixo risco e poucas recompensas, para reconstruir os fundamentos da condição física. Atletas que vivem essas situações com frequência são viciados em treino de alto risco e deveriam reexaminar prioridades e métodos. A figura 8.2 mostra as curvas de risco e recompensa do treinamento.
+
+O risco associado ao treino vem da combinação de frequência, intensidade, duração e modo, e é único para cada atleta. O que é grande risco para um pode não ser para outro. A diferença tem a ver com experiência, condição física, suscetibilidade a lesões, adaptações prévias ao treino, idade e outros fatores.
+
+Cada atleta precisa trabalhar com a frequência de sessões que seja ótima para ele. Um triatleta de elite pode treinar três vezes por dia durante vários dias seguidos e ficar mais em forma. Mas um triatleta iniciante que tente treinar três vezes por dia vai acabar exausto. Quem busca "muito em pouco tempo" se vê obrigado a parar de treinar por muitos dias para se recuperar. É imperativo encontrar uma frequência de sessões que funcione para você e então ser rígido com ela.
+
+O mesmo vale para intensidade e duração. Treinar muito e em alta intensidade, como intervalos em dias consecutivos do mesmo esporte, é muito arriscado, mas o ganho potencial é alto. Sessões extremamente longas, como competições de quatro horas ou passeios de bike de sete horas, também são arriscadas, mas trazem alto ganho potencial. Assumir esses riscos quando ainda não se está pronto pode ser um grande erro. Aliás, exagerar nas sessões, principalmente na duração, é o erro mais comum dos atletas de longa distância que se treinam sozinhos.
+
+Descrição da figura 8.2: a figura mostra curvas de risco e recompensa no treinamento. À medida que o risco da sessão sobe, a recompensa potencial também sobe, mas em ritmo decrescente, até um ponto a partir do qual o risco continua crescendo enquanto o ganho começa a cair. A mensagem visual é que existe uma zona ótima de risco moderado a alto onde o retorno é máximo, e que ultrapassar esse ponto significa lesão, doença ou overtraining sem ganho proporcional. Voltando ao texto.
+
+Os riscos associados ao "modo" se referem ao tipo de sessão: natação, ciclismo, corrida ou treino cruzado. Dos três esportes do triatlo, a corrida é a mais arriscada por causa da tensão sobre ossos e tecidos moles. Alguns atletas, se correm demais, podem se lesionar, mas com cuidado dá para reduzir o risco. Isso quer dizer fortalecer ossos e tecidos da corrida de forma gradual. Para a maioria dos atletas, a natação é o esporte menos arriscado do triatlo.
+
+O risco de lesão por frequência, intensidade ou duração também diminui quando o atleta inclui tempo suficiente de recuperação no programa. Sempre que treinar o mesmo esporte em duas sessões consecutivas, garanta um tempo de recuperação. A recuperação frequente é a chave para manter esse tipo de risco num nível razoável.
+
+O treinamento de força também pode ser um modo de alto risco. Levantar pesos com carga alta antes do corpo estar pronto pode causar lesão, principalmente se o atleta é agressivo demais na sala de musculação.
+
+Dentro de um regime com pesos, alguns exercícios são mais arriscados que outros. Os agachamentos com barra livre, por exemplo, podem ser problemáticos. Uma barra muito carregada sobre os ombros pode ser grande risco para um atleta novo na sala, com lesões prévias de joelho ou quadril, ou muito mais velho e com discos vertebrais desgastados. Mas, se você controla o risco, a recompensa do agachamento é importante. Menos arriscados, mas também menos gratificantes, são exercícios que trabalham grupos musculares similares, como leg press, step e avanços, ou lunges.
+
+Os exercícios pliométricos, movimentos explosivos feitos para criar potência, principalmente na corrida, também são bastante arriscados e oferecem grande recompensa. Os pliométricos de contração excêntrica são mais arriscados, mas potencialmente mais gratificantes, que os de contração concêntrica. Um exemplo de pliométrico excêntrico é saltar de uma caixa alta, pousar e saltar imediatamente para uma segunda caixa alta. A versão concêntrica do mesmo exercício elimina o salto para baixo e o pouso. A recompensa potencial é menor, mas também há menos risco de lesão. O capítulo 13 trata de pliometria em sessões complexas, ver tabela 13.8.
+
+Ao escolher uma sessão, considere a recompensa que espera obter e os riscos. Se investir com sabedoria, aumenta as chances de criar uma excelente condição física e evitar as armadilhas comuns do treino de triatlo agressivo demais. Se errar, que seja por se arriscar de menos, não demais. Eu garanto: a longo prazo, é melhor assim.
+
+Horas do dia.
+
+Em geral, no triatlo se superestima o peso do ciclismo, já que essa etapa costuma representar a metade da duração total. Por isso parece razoável passar metade do tempo de treino sobre a bicicleta. No mundo real do treinamento isso nem sempre é possível, mas o ciclismo deve ocupar normalmente a maior parte do treino. Há exceções. Triatletas em latitudes mais ao norte, por exemplo, têm dificuldade de pedalar fora no inverno por causa do frio e da neve. Em latitudes equatoriais, calor e umidade do verão também favorecem treino indoor. Além disso, responsabilidades podem obrigar a treinar muito cedo de manhã ou tarde da noite, quando não há luz suficiente para o ciclismo. Por isso é fundamental ter um bom rolo de treino para um atleta de multiesporte com grandes aspirações. Mesmo usando rolo com regularidade, é provável que seu volume de ciclismo sofra se não puder sair de bicicleta. Dá para passar muitas horas numa bike estática. É assim, e o atleta criativo tem que ter calma na hora de ajustar o treino nessas situações.
+
+Como as sessões de ciclismo são mais longas que as de natação ou corrida, seu volume semanal também precisa diminuir quando o clima ou outros obstáculos obrigam a pedalar indoor. Mesmo assim, a maioria dos atletas sabe de antemão o que vai atrapalhar o ciclismo na estrada e pode programar o total anual de horas levando isso em conta. Se você mora em Minnesota, por exemplo, sabe que no inverno vai pedalar quase sempre dentro de casa, mas no verão dá para sair. Então programe as sessões de ciclismo nessa proporção. Por exemplo, treinos de ciclismo somando 350 horas no inverno e 450 no verão.
+
+Se você está pronto para ser um ciclista bem competente mas tem grandes limitadores em natação e corrida, talvez queira passar menos da metade do treino na bike. Para saber se é seu caso, compare suas parciais na competição A com as do resto do seu grupo de idade. Se sua posição em natação foi a décima quinta, no ciclismo a quarta e na corrida a vigésima, você deveria focar mais em natação e corrida e menos em ciclismo. Nesses casos, seu volume de treino muda, passando menos tempo na bike para dedicar mais tempo ao esporte que te limita.
+
+Na coluna de horas do seu Programa de treinamento anual você já indicou o volume de cada semana. Só falta decidir como distribuir essas horas durante a semana. A tabela 8.1 traz uma proposta. Na coluna da esquerda, procure as horas programadas para a primeira semana da temporada. Indo para a direita, você encontra o total semanal dividido em quantidades diárias.
+
+Descrição da tabela 8.1: a tabela cruza o total de horas semanais de treino com a distribuição em sete dias da semana. O padrão de Friel concentra a sessão mais longa num dia do fim de semana, distribui sessões médias em dois ou três dias, e usa um ou dois dias de carga mais leve ou descanso. Por exemplo, uma semana de 12 horas pode ser dividida em três horas, duas, duas, uma e meia, uma e meia, uma e uma. A sessão mais longa nessa semana é de três horas. As horas diárias incluem todo o treino, natação, ciclismo, corrida, pesos e treino cruzado, e podem ser divididas em duas sessões no mesmo dia, sobretudo no período base. Para distâncias longas, a mesma semana de 12 horas pode ter um dia "longo" ainda maior, como quatro horas, com um dia de descanso. Para competições sprint e olímpica, a distribuição padrão funciona melhor. Consulte a tabela 8.1 no livro físico para os valores precisos por faixa de horas semanais. Voltando ao texto.
+
+Esta tabela funciona melhor para provas sprint e olímpica. Para provas longas, o volume varia para que as sessões diárias sejam mais longas, ainda que o volume semanal seja o mesmo.
+
+Horas para as sessões de treino.
+
+A figura 8.1 propõe dias para natação, ciclismo, corrida, sessões combinadas e sessões com pesos, mas esse padrão pode não servir por causa do seu estilo de vida, trabalho, instalações ou grupos de treino. Então, como programar suas sessões? Levando em conta todos esses fatores, desenhe sua própria semana pessoal, uma que dê para repetir semana após semana durante toda a temporada com mudanças mínimas. Veja a seguir como fazer.
+
+Sessões ancoradas.
+
+São sessões que precisam acontecer em dias específicos, sobre os quais você tem pouco ou nenhum controle. Por exemplo, se seu grupo de masters nada às terças, quintas e sábados, você precisa encaixar essas sessões no programa semanal. Do mesmo modo, se nada sozinho mas a piscina só abre segundas, quartas e sextas, programe as sessões ancoradas para esses dias. Outras sessões ancoradas típicas são as de ciclismo ou corrida em grupo em horários e dias fixos. Sua corrida mais longa ou seu pedal mais longo também podem ser sessões ancoradas, porque precisam acontecer no fim de semana, quando há mais tempo.
+
+Sessões flexíveis.
+
+Depois você programa o resto, as sessões flexíveis, que podem cair em qualquer dia da semana. Se você tem alto volume e faz quatro ou mais sessões por esporte por semana, encaixar é fácil. Basta anotar duas sessões por dia e fazer. Mas se você faz só duas ou três sessões semanais de um esporte, o quanto elas estão espaçadas importa. Se você corre só duas vezes por semana, não vai querer correr terça e quarta, porque ficariam cinco dias seguidos sem correr. Você perderia os ganhos. Nesse caso, separe as duas corridas com dois ou três dias sem correr no meio. Por exemplo, terça e sexta.
+
+Se você faz três sessões de um esporte, separe-as com um dia no meio. Por exemplo, corra terças, quintas e sábados.
+
+Ordem diária das sessões.
+
+Agora vamos ajustar a ordem dos seus treinos no dia. É aqui que entra sua disposição para se arriscar e ganhar. Nas sessões ancoradas, o horário provavelmente já está definido. Nas flexíveis, é preciso pensar quando correr. Vale repetir: a corrida é o esporte com maior probabilidade de lesão por causa da enorme tensão sobre ossos, músculos, tendões e cartilagens. Se você se lesiona correndo e perde vários dias ou até semanas de treino, perde boa parte dos ganhos de condição física, se não todos. É preciso correr com cautela e fazer o possível para não se lesionar. Uma das causas mais comuns de lesão é correr com as pernas cansadas, especialmente em corridas longas ou rápidas. Garanta que suas pernas estejam relativamente frescas quando for treinar.
+
+A fadiga das pernas pode ser problema sempre que você faz uma corrida longa ou rápida em menos de 24 horas depois de outra sessão intensa de corrida ou ciclismo. Por exemplo, é melhor não fazer um pedal longo no sábado e uma corrida longa no domingo. Muitos triatletas tentam isso achando que estão se preparando para o que vai acontecer na prova, já que terão que correr com as pernas cansadas. A fadiga do dia seguinte a um pedal grande, no entanto, não é a mesma do dia da competição. Na verdade, há muitas causas de fadiga, como o capítulo 4 explica. O risco de lesão se amplia quando você faz uma corrida longa no dia seguinte a um pedal longo. A solução é programar a corrida longa no dia anterior ao pedal longo. Então, se precisa ancorar esses treinos, faça a corrida no sábado e o ciclismo no domingo.
+
+Cuidado também com as sessões combinadas, conhecidas como bricks. Embora combinar pedais longos com corridas longas pareça com o que você vai fazer na competição, é arriscado. Se você é propenso a lesão correndo, essa combinação não é boa, e sugiro alternar outros dois tipos de brick: com ênfase no ciclismo e com ênfase na corrida. Num brick com ênfase no ciclismo, você faz um pedal longo seguido de uma corrida curta, de uns 15 minutos. Mesmo pouco, cumpre um dos objetivos do brick: aprender a correr de forma eficaz logo que desce da bike. Essa combinação funciona bem para triatletas de Ironman. O brick com ênfase na corrida começa com um pedal curto que pode incluir alguns esforços na intensidade de competição. Curto significa entre 30 e 90 minutos, dependendo do seu volume semanal. A corrida tem que ser longa.
+
+Tempo entre as sessões.
+
+Por fim, é hora de programar os períodos de inatividade. Se você faz duas ou mais sessões diferentes no mesmo dia, e não brick, em geral é melhor descansar um pouco entre elas. Talvez sua rotina não permita e você tenha que correr e nadar antes de ir para o trabalho de manhã, mas o normal é que você tire mais proveito do treino se se recuperar um pouco antes da próxima sessão, mesmo em esportes diferentes. O tempo entre sessões deve incluir reabastecimento de combustível, e é melhor sentar, se possível.
+
+Dito tudo isso, você já deve conseguir desenhar uma semana de treino personalizada que aproveite ao máximo o tempo disponível e o deixe o mais preparado possível para a competição, em função do seu estilo de vida.
+
+Uma sessão ou duas?
+
+Duas sessões são tão boas quanto uma? É tão bom, por exemplo, fazer duas corridas de 45 minutos quanto uma corrida de 90 minutos? Depende do objetivo da sessão. Se o propósito é melhorar a resistência para provas longas, a resposta é não. Mas se você quer melhorar outra capacidade, como velocidade, força, resistência muscular ou resistência anaeróbica, a resposta é sim. De fato, para isso é muito melhor correr duas vezes no mesmo dia do que só uma.
+
+Mesmo que a maioria dos triatletas queira melhorar a resistência, no treino multiesporte duas sessões no mesmo dia raramente trazem benefício. Vamos ver por quê. Para obter benefícios fisiológicos das sessões de resistência, não basta trabalhar as muitas partes do sistema aeróbio, principalmente coração, pulmões e sangue. Também é preciso trabalhar os sistemas muscular e nervoso. Além disso, é preciso melhorar a produção de enzimas, energia e hormônios para a condição física aeróbica. As sessões mais longas são melhores para estimular o desenvolvimento de todas as funções do corpo ligadas à resistência aeróbica. Há também benefícios psicológicos em completar treinos longos.
+
+Uma razão pela qual uma sessão longa é melhor que duas curtas para a resistência aeróbica tem a ver com o modo como o corpo obtém energia de gordura e carboidratos durante o exercício de intensidade moderada. Quando você começa uma sessão, o corpo depende muito dos carboidratos armazenados. Mas à medida que a sessão se prolonga, o corpo começa a queimar gordura no lugar dos carboidratos. Queimar gordura é um dos benefícios esperados do exercício aeróbico para melhorar a resistência. Assim, se você faz duas corridas de 45 minutos no mesmo dia em vez de uma de 90, passa menos tempo nesse dia usando gordura como fonte de energia. Portanto, essas sessões trazem menos benefício ao seu sistema de produção de energia. O mesmo se aplica aos outros sistemas. Logo, quando o assunto é resistência, uma sessão longa é melhor que duas curtas.
+
+Sessões combinadas.
+
+A preparação para provas acima da olímpica, ou para o máximo desempenho em qualquer distância, exige em parte que se treine duas vezes ao dia para que tudo funcione bem. Atletas de elite cujo trabalho é competir e que não têm muitas outras responsabilidades fora do esporte deveriam considerar seriamente fazer três sessões por dia com regularidade. Mas três sessões por dia raramente são necessárias para o atleta que compete com os do seu grupo de idade. Para a maioria dos amadores sérios, com trabalho, família, casa e outras responsabilidades, essa frequência pode causar overtraining, burnout, doenças e lesões. Duas boas sessões são sempre melhores que três sessões medíocres.
+
+Além de duas por dia, nos períodos de criação é benéfico combinar treinos de duas capacidades numa mesma sessão. Isso não só aproveita melhor o tempo como simula a tensão de uma competição multiesporte. Existem dois jeitos: com bricks, como explicado no apêndice E, e com sessões de múltiplas capacidades, detalhadas nos apêndices C e D, chamadas de intervalos de RA mais limiar.
+
+Bricks.
+
+Uma vez estabelecidas as capacidades básicas de resistência, força e velocidade, as sessões combinadas de ciclismo e corrida, os bricks, começam a ter papel importante no treino. Bricks podem ter muitas formas e reforçar resistência aeróbica, ritmo de competição, resistência muscular e força em subidas. Podem tornar mais eficaz o jeito de você fazer a checagem do equipamento antes da prova. Para escolher os bricks certos do apêndice E, é preciso entender as exigências das próximas competições e ajustar o treino a essas necessidades.
+
+Sessões de múltiplas capacidades.
+
+Nos períodos de criação e pico, normalmente é necessário combinar duas capacidades para um mesmo esporte numa só sessão. Essas sessões aproveitam melhor o tempo disponível que uma sessão de só uma capacidade, e produzem níveis de tensão mais próximos aos da competição. A regra geral é combinar resistência ou resistência muscular com força, velocidade, resistência anaeróbica ou potência.
+
+Nessas combinações, o trabalho de resistência ou de resistência muscular, que é menos intenso, deve ser o segundo da sessão. Assim, uma sessão combinada de corrida, depois do aquecimento, pode começar com intervalos na pista para testar a resistência anaeróbica e seguir com uma corrida constante perto do limiar de lactato para a resistência muscular. Dá para combinar três capacidades ou mais. Por exemplo, velocidade, resistência muscular e resistência podem se combinar numa única sessão. Essa sessão seria excelente para desenvolver o tipo de condição física necessária a uma competição.
